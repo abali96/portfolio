@@ -1,0 +1,15 @@
+<head>
+  <title>Arjun Bali</title>
+</head>
+
+<body>
+	{{#each projects}}
+		{{> project}}
+	{{/each}}
+</body>
+
+<template name="project">
+	<section name={{name}}>
+		<div class="background project home-tint" style={{style}}></div>
+	</section>
+</template>
