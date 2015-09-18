@@ -47,6 +47,15 @@ if (Meteor.isClient) {
       target.siblings('.tab').removeClass('active-tab');
       target.addClass('active-tab');
     },
+    "mouseover .image-wrapper" : function() {
+      var target = $(event.target);
+      target.siblings().removeClass('active-image');
+      target.addClass('active-image');
+      var display = target.parent().siblings('.display-image');
+      var backgroundImage = target[0].style.backgroundImage;
+      $(display).css({'background-image' : backgroundImage});
+      target.parent().siblings('.caption').text(target.data('text'));
+    },
   });
 }
 
