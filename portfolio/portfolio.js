@@ -34,6 +34,9 @@ if (Meteor.isClient) {
     },
     isGallery : function() {
       return this.type == 'gallery';
+    },
+    gallery_display_image : function() {
+      return _.first(this.images);
     }
   });
 
@@ -66,25 +69,96 @@ if (Meteor.isServer) {
                 title: "Jeeves, the Robo-Butler",
                 subtitle: "Self-Balancing Two-Wheel Arduino Robot",
                 background_image: 'background-image: url("/projects/jeeves/jeeves.jpg")',
-                tabs:[{type: "tech", name: "Tech Stack", classes: "tab active-tab"}, {type: "gallery", name: "Gallery", classes: "tab"}, {type: "video", name: "Video", classes: "tab"}],
+                tabs:[{type: "tech", name: "Tech Stack", active_tab: "active-tab"}, {type: "gallery", name: "Gallery"}, {type: "video", name: "Video"}],
                 content_boxes: [
-                                      {css_class: '', type: "tech", paragraphs: ['<p>Jeeves is a "mini Segway" that features a PID control loop with basic external disturbance rejection and the ability to respond to directional commands over serial. All electro-mechanical design was done in-house using SolidWorks and the chassis was machined myself using the mill, drill press, brake press, and hand tools on campus.</p><p>Featured in the <a href="http://iwarrior.uwaterloo.ca/2015/01/28/30267/waterloo-engineerings-hidden-gems/#hide"><span class="link">The Iron Warrior</span></a>, the Waterloo Engineering newspaper. Check out the code on <a href="http://github.com/abali96/ButlerRobot/"><span class="link">Github</span></a>.</p>'],
-                                        tech_lists: [
-                                          {
-                                            css_class: 'electrical',
-                                            name: "Electrical Components",
-                                            list_elements: ["Arduino Uno", "MPU6050 6Dof IMU", "Geared DC motors", "Adafruit motorshield", "12V LiPo battery"],
-                                          },
-                                          {
-                                            css_class: 'electrical',
-                                            name: "Key Software Learning",
-                                            list_elements: ["C++/Arduino IDE", "Preprocessor commands", "FIFO buffers", "PID control loop + tuning", "Serial/I2C comms."],
-                                          },
-                                        ],
-                                      },
-                                      {css_class: 'gall', type: "gallery", background_image: 'background-image: url("/projects/jeeves/jeeves.jpg")', images: ["background-image: url('/projects/jeeves/butler_standing.jpg')", "background-image: url('/projects/jeeves/chassis.png')", "background-image: url('/projects/jeeves/imu.jpg')", "background-image: url('/projects/jeeves/jeeves_underneath.jpg')", "background-image: url('/projects/jeeves/on_carpet.jpg')"]},
-                                      {css_class: 'video-wrapper', type: "video", video: "<iframe class='video' width='100%' height='92%' src='//www.youtube.com/embed/7g7U8gHD9v4' frameborder='0' allowfullscreen></iframe>"}]
+                                  {css_class: '', type: "tech", paragraphs: ['<p>Jeeves is a "mini Segway" that features a PID control loop with basic external disturbance rejection and the ability to respond to directional commands over serial. All electro-mechanical design was done in-house using SolidWorks and the chassis was machined myself using the mill, drill press, brake press, and hand tools on campus.</p><p>Featured in the <a href="http://iwarrior.uwaterloo.ca/2015/01/28/30267/waterloo-engineerings-hidden-gems/#hide"><span class="link">The Iron Warrior</span></a>, the Waterloo Engineering newspaper. Check out the code on <a href="http://github.com/abali96/ButlerRobot/"><span class="link">Github</span></a>.</p>'],
+                                    tech_lists: [
+                                    {
+                                      css_class: 'electrical',
+                                      name: "Electrical Components",
+                                      list_elements: ["Arduino Uno", "MPU6050 6Dof IMU", "Geared DC motors", "Adafruit motorshield", "12V LiPo battery"],
+                                    },
+                                    {
+                                      css_class: 'electrical',
+                                      name: "Key Software Learning",
+                                      list_elements: ["C++/Arduino IDE", "Preprocessor commands", "FIFO buffers", "PID control loop + tuning", "Serial/I2C comms."],
+                                    },
+                                    ],
+                                  },
+                                  {css_class: 'gall', type: "gallery", background_image: 'background-image: url("/projects/jeeves/jeeves.jpg")', images: ["background-image: url('/projects/jeeves/butler_standing.jpg')", "background-image: url('/projects/jeeves/chassis.png')", "background-image: url('/projects/jeeves/jeeves_underneath.jpg')", "background-image: url('/projects/jeeves/on_carpet.jpg')"]},
+                                  {css_class: 'video-wrapper', type: "video", video: "<iframe class='video' width='100%' height='92%' src='//www.youtube.com/embed/7g7U8gHD9v4' frameborder='0' allowfullscreen></iframe>"}]
               };
-  Categories.insert({name: "robotics-wrapper", projects: [jeeves]});
+  var adelaide = {name: "adelaide",
+                  title: "Adelaide, the Line Follower",
+                  subtitle: "Hydrogen Fuel Cell-Powered Robot",
+                  background_image: 'background-image: url("/projects/adelaide/background.jpg")',
+                  invert: "line-follow",
+                  tabs:[{type: "tech", name: "Tech Stack", active_tab: "active-tab"}, {type: "gallery", name: "Gallery"}],
+                  content_boxes: [
+                      {css_class: '', type: "tech", paragraphs: ["<p>Adelaide explores the intersection of autonomous robotics and environmental sustainability. Two hydrogen fuel cells are located on-board the car chassis, used to power all circuitry including the drivetrain. Adelaide's success was determined by its ability to navigate an arbitrary course marked by a black line on a white surface, making intelligent decisions at forks and dead-ends. Efficient power management algorithms were written to optimize run time at 19 minutes.</p>"],
+                      tech_lists: [
+                          {
+                            css_class: 'electrical',
+                            name: "Electrical Components",
+                            list_elements: ["TI MSP430 microcontroller", "Brushed DC motors", "Pololu 6V motor driver", "Two hydrogen fuel cells", "Light and touch sensors"],
+                          },
+                          {
+                            css_class: 'software',
+                            name: "Key Software Learning",
+                            list_elements: ["C++", "IAR embedded workbench", "Fuzzy logic", "Light sensor calibration", "Efficient power use"],
+                          },
+                        ]},
+                        {css_class: 'gall', type: "gallery", background_image: 'background-image: url("http://i.imgur.com/nID76MQ.jpg")', images: ['background-image: url("http://i.imgur.com/m5USp5d.jpg")', 'background-image: url("http://i.imgur.com/K9qqxCJ.jpg")', 'background-image: url("http://i.imgur.com/ZyaEBiy.jpg")', 'background-image: url("http://i.imgur.com/9B93fIZ.jpg")']}
+                  ]
+                };
+    var frame_me = {name: "frameMe",
+                title: "FrameMe, Living Photo Frame",
+                subtitle: "500px Pictures That Compliment Your Day",
+                background_image: 'background-image: url("http://i.imgur.com/yKutko5.jpg")',
+                tabs: [{type: "tech", name: "Tech Stack", active_tab: "active-tab"}, {type: "gallery", name: "Gallery"}],
+                content_boxes: [
+                                  {css_class: '', type: "tech", paragraphs: ['<p>FrameMe is a living photo frame that dynamically curates and displays 500px (social media) photos based on the current time of day and weather. FrameMe provides an endless stream of pictures, cycling every minute and renewing its collection every hour. Current features being built include motion detection for efficient power management and natural language processing for verbal commands. </p> <p>Check out the <a href="https://medium.com/@abali96/building-a-digital-photo-frame-with-500px-raspberry-pi-and-ruby-f3639fd294ce"><span class="link">build blog</span></a> for full implementation details and source code.</p>'],
+                                    tech_lists: [
+                                    {
+                                      css_class: 'electrical',
+                                      name: "Electrical Components",
+                                      list_elements:["Raspberry Pi Model B", "Faytech 12.1 IP65 Touch LCD", "USB Wifi Module", "PIR Motion Sensor"],
+                                    },
+                                    {
+                                      css_class: 'electrical',
+                                      name: "Key Software Learning",
+                                      list_elements: ["Raspbian OS", "*NIX environment configuration", "Ruby scripting", "500px API integration"],
+                                    },
+                                    ],
+                                  },
+                                  {css_class: 'gall', type: "gallery", images: ['background-image: url("http://i.imgur.com/AkDrCgm.jpg")', 'background-image: url("http://i.imgur.com/aZtaCCK.jpg")']},
+                                ]
+                    };
+    var breathaliver = {name: "breathaliver",
+                title: "BreathAliver, IOT breathalyzer",
+                subtitle: "Wearable, Uber-Connected Breathalyzer",
+                background_image: 'background-image: url("/projects/breathaliver/breathaliver_cropped.jpg");',
+                invert: "line-follow",
+                tabs: [{type: "tech", name: "Tech Stack", active_tab: "active-tab"}, {type: "gallery", name: "Gallery"}],
+                content_boxes: [
+                                  {css_class: '', type: "tech", paragraphs: ['<p>BreathAliver is wearable breathalyzer that detects your blood alcohol concentration as you approach your car, and automatically calls an Uber cab to your location (or texts a friend!) if you’ve had too much to drink. It uses NFC to determine when the user approaches their car, acting as a pre-emptive solution to drunk driving.</p><p>To minimize cost, BreathAliver collects temperature and pressure data about the user\'s breath, correlating these metrics to relative levels of blood alcohol concentration.</p><p>This project placed 1st at <a href="https://wearhackstoronto.splashthat.com/"<span class="link">Wearhacks Toronto 2015</span></a>, and was featured at the <a href="http://www.wearewearables.com/july-2015-toronto/"><span class="link">Toronto July WeAreWearables conference</span></a> at these Discovery District.'],
+                                    tech_lists: [
+                                    {
+                                      css_class: 'electrical',
+                                      name: "Electrical Components",
+                                      list_elements:["Intel Edison", "Xadow Wearables Kit", "NFC tag", "Barometer"],
+                                    },
+                                    {
+                                      css_class: 'electrical',
+                                      name: "Key Software Learning",
+                                      list_elements: ["C++, Python, Ruby", "Uber API", "Twilio API", "Sensor calibration"],
+                                    },
+                                    ],
+                                  },
+                                  {css_class: 'gall', type: "gallery", images: ['background-image: url("/projects/breathaliver/breathaliver_vertical.jpg")', 'background-image: url("/projects/breathaliver/breathaliver_justin.jpg")', 'background-image: url("/projects/breathaliver/wearewearables_conference.jpg")']},
+                                ],
+                    };
+  var matrix = {name: "Matrix "};
+  Categories.insert({name: "robotics-wrapper", projects: [jeeves, breathaliver, frame_me, adelaide,]});
 }
 

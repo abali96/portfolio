@@ -15,20 +15,20 @@
 </body>
 
 <template name="project">
-	<section class="section">
+	<section class="section {{invert}}">
 		<a name={{name}}></a>
-		<div class="background project home-tint" style={{background_image}}></div>
-		<h1 class='title' style='right: -0.3vw;'>{{title}}</h1>
-		<h1 class='subtitle'>{{subtitle}}</h1>
+		<div class="background project home-tint {{invert}}" style={{background_image}}></div>
+		<h1 class='title {{invert}}' style='right: -0.3vw;'>{{title}}</h1>
+		<h1 class='subtitle {{invert}}'>{{subtitle}}</h1>
 		{{> description}}
 	</section>
 </template>
 
 <template name="description">
-	<div class="description">
+	<div class="description {{invert}}">
 		<div class="tabs">
 			{{#each tabs}}
-				<div class={{classes}} data-type={{type}}>{{name}}</div>
+				<div class="tab {{active_tab}}" data-type={{type}}>{{name}}</div>
 			{{/each}}
 		</div>
 		{{#each content_boxes}}
@@ -49,12 +49,10 @@
 			</ul>
 		{{/each}}
 
-		{{#if background_image}}
-			<div class='display-image' style={{background_image}}></div>
-		{{/if}}
-
 		{{#if images}}
+		<div class='display-image' style={{gallery_display_image}}></div>
 			<div class='small-images'>
+				<div class='image-wrapper' style={{../background_image}}></div>
 				{{#each images}}
 					<div class='image-wrapper' style={{this}}></div>
 				{{/each}}
