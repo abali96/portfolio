@@ -134,7 +134,7 @@ $(document).on('ready page:load', function() {
   $('.content, .webdev-gall, .mobile-gallery').on('mouseover', '.image-wrapper', function() {
     $(this).siblings().removeClass('active-image');
     $(this).addClass('active-image');
-    var display = $(this).parent().siblings('.display-image')
+    var display = $(this).parent().siblings('.display-image');
     $(display).removeAttr('id');
     $(display).attr('id', $(this).attr('id'));
 

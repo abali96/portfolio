@@ -40,6 +40,12 @@ if (Meteor.isClient) {
     }
   });
 
+  Template.webdev_gallery.helpers({
+    gallery_display_image : function() {
+      return _.first(this.images).background_image;
+    },
+  });
+
   Template.description.events({
     "click .tabs .tab" : function(event) {
       var target = $(event.target);
@@ -50,7 +56,8 @@ if (Meteor.isClient) {
       target.siblings('.tab').removeClass('active-tab');
       target.addClass('active-tab');
     },
-    "mouseover .image-wrapper" : function() {
+    "mouseover .image-wrapper" : function(event) {
+      console.log("here");
       var target = $(event.target);
       target.siblings().removeClass('active-image');
       target.addClass('active-image');
@@ -59,6 +66,19 @@ if (Meteor.isClient) {
       $(display).css({'background-image' : backgroundImage});
       target.parent().siblings('.caption').text(target.data('text'));
     },
+  });
+
+  Template.webdev_gallery.events({
+  "mouseover .image-wrapper" : function(event) {
+    console.log("here");
+    var target = $(event.target);
+    target.siblings().removeClass('active-image');
+    target.addClass('active-image');
+    var display = target.parent().siblings('.display-image');
+    var backgroundImage = target[0].style.backgroundImage;
+    $(display).css({'background-image' : backgroundImage});
+    target.parent().siblings('.caption').text(target.data('text'));
+  },
   });
 }
 
@@ -138,7 +158,6 @@ if (Meteor.isServer) {
                 title: "BreathAliver, IOT breathalyzer",
                 subtitle: "Wearable, Uber-Connected Breathalyzer",
                 background_image: 'background-image: url("/projects/breathaliver/breathaliver_cropped.jpg");',
-                invert: "line-follow",
                 tabs: [{type: "tech", name: "Tech Stack", active_tab: "active-tab"}, {type: "gallery", name: "Gallery"}],
                 content_boxes: [
                                   {css_class: '', type: "tech", paragraphs: ['<p>BreathAliver is wearable breathalyzer that detects your blood alcohol concentration as you approach your car, and automatically calls an Uber cab to your location (or texts a friend!) if you’ve had too much to drink. It uses NFC to determine when the user approaches their car, acting as a pre-emptive solution to drunk driving.</p><p>To minimize cost, BreathAliver collects temperature and pressure data about the user\'s breath, correlating these metrics to relative levels of blood alcohol concentration.</p><p>This project placed 1st at <a href="https://wearhackstoronto.splashthat.com/"<span class="link">Wearhacks Toronto 2015</span></a>, and was featured at the <a href="http://www.wearewearables.com/july-2015-toronto/"><span class="link">Toronto July WeAreWearables conference</span></a> at these Discovery District.'],
@@ -183,6 +202,48 @@ if (Meteor.isServer) {
                                   {css_class: 'video-wrapper', type: "video", video_text: "<p>We see the time, the current weather (rain) and Apple's current share price.</p>", video: '<iframe width="100%" height="80%" src="https://www.youtube.com/embed/FiXA4B3V5pA" frameborder="0" allowfullscreen></iframe>'},
                                 ],
                     };
-  Categories.insert({name: "robotics-wrapper", projects: [jeeves, matrix, breathaliver, frame_me, adelaide]});
+    var replay = {name: "replay",
+                title: "Replay, Social Event Archive",
+                background_image: 'background-image: url("");',
+                invert: "line-follow",
+                tabs: [{type: "tech", name: "Summary", active_tab: "active-tab"}, {type: "stack", name: "Tech Stack"}],
+                content_boxes: [
+                                  {css_class: '', type: "tech", paragraphs: ["<p>Replay leverages Twitter API data so that events can be 'replayed' with the original audience reactions. Currently, it supports three distinct code-crafted experiences: a curated digest, a live minute-by-minute timeline, and tweets by social influencers and friends. Replay excels at tracking sporting events, concert festivals, and television shows, where you can see exactly what happened at what moment and how the world felt with fine precision. Quality content is curated through a simple upvote/downvote system. It's better than PVR, and a hell of a lot cooler than missing out.</p><p>Replay was originally piloted at Bitmaker Labs, a code bootcamp in downtown Toronto. It was a project I completed shortly after completing their nine-week, immersive web development bootcamp.</p><p>Check out the code on <a href='http://github.com/abali96/Replay/''><span class='white-link'>Github</span></a>.</p>"]},
+                                  {css_class: '', type: "stack",
+                                    tech_lists: [
+                                      {
+                                        css_class: 'tech-list',
+                                        name: "Back-End",
+                                        list_elements: ["Ruby on Rails 4", "Cron jobs to run system checks and data-crunching", "Custom rake tasks for tweet filtering algorithms", "DelayedJob to queue dynamic changing of Twitter API stream parameters", "Multithreading", "Geocoder and timezone manipulation"]
+                                      },
+                                      {
+                                        css_class: 'tech-list',
+                                        name: "Core Algorithms",
+                                        list_elements: ["Work-around to Twitter API rate limiting and dynamically starting stream based on event time", "Makeshift 'concurrent API calls' to stream simultaneous events' parameters when only establishing one connection, while also detecting which event a tweet belongs to (conditional probability)", "Tweet activity peak detection to auto-segment events into important moments of high social traffic"]
+                                      },
+                                      {
+                                        css_class: 'tech-list',
+                                        name: "Core Algorithms",
+                                        list_elements: ["SASS preprocessor", "CSS3 transitions", "A dash of Bourbon & Neat", "jQuery and jQuery-UI", "Proprietary image filtering"]
+                                      },
+                                    ],
+                                  },
+                                ],
+                  webdev_gallery: {
+                      invert: "line-follow",
+                      images : [
+                        {image_classes: "image-wrapper active-image", background_image:"background-image: url('/projects/replay/replay.png')", image_number: "1", caption:"Welcome to replay."},
+                        {image_classes: "image-wrapper", background_image:"background-image: url('/projects/replay/homepage.png')", image_number: "2", caption:"After logging in, Replay dives straight into its event archives - recent events tracked by other users."},
+                        {image_classes: "image-wrapper", background_image:"background-image: url('/projects/replay/edgefest.png')", image_number: "3", caption:"Edgefest, the summer concert series, has this auto-generated and styled landing page with auto-generated timeslots based on peaks in tweet activity during the event."},
+                        {image_classes: "image-wrapper", background_image:"background-image: url('/projects/replay/tweets.png')", image_number: "4", caption:"Replay knows to start tracking before the doors open and ensures that event 'VIP's tweets are tracked seperately to guarantee quality content. Here, VIPs are the bands, organizers, and trusted media."},
+                        {image_classes: "image-wrapper", background_image:"background-image: url('/projects/replay/pictures.png')", image_number: "5", caption:"The most popular pictures from Said The Whale's set are featured paired with an upvote/downvote button for the community to curate relevant content."},
+                        {image_classes: "image-wrapper", background_image:"background-image: url('/projects/replay/timeline.png')", image_number: "6", caption:"Minute-by-minute scrollable timeline where you can witness audience reactions as if they were live. You can see exactly what happened at what moment in quasi 'real time', just like the tweet says!"},
+                        {image_classes: "image-wrapper", background_image:"background-image: url('/projects/replay/gallery.png')", image_number: "7", caption:"Gallery mode to get a quick snapshot of the event."},
+                      ]
+                  }
+                    };
+
+  Categories.insert({name: "robotics-wrapper", projects: [jeeves, matrix, breathaliver, adelaide, frame_me]});
+  Categories.insert({name: "webdev-wrapper", projects: [replay]});
 }
 

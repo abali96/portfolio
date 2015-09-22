@@ -19,9 +19,26 @@
 		<a name={{name}}></a>
 		<div class="background project home-tint {{invert}}" style={{background_image}}></div>
 		<h1 class='title {{invert}}' style='right: -0.3vw;'>{{title}}</h1>
-		<h1 class='subtitle {{invert}}'>{{subtitle}}</h1>
+		{{#if subtitle}}
+			<h1 class='subtitle {{invert}}'>{{subtitle}}</h1>
+		{{/if}}
 		{{> description}}
+		{{> webdev_gallery}}
 	</section>
+</template>
+
+<template name="webdev_gallery">
+	{{#with webdev_gallery}}
+		<div class="webdev-gall">
+	      <div class='display-image {{invert}}' id="1" style={{gallery_display_image}}></div>
+	      <div class='caption {{invert}}'>Welcome to Replay.</div>
+	      <div class='small-images  {{invert}}'>
+	      	{{#each images}}
+	      		<div class={{image_classes}} {{../invert}} id={{image_number}} style={{background_image}} data-text={{caption}}></div>
+	      	{{/each}}
+	      </div>
+	    </div>
+	{{/with}}
 </template>
 
 <template name="description">
