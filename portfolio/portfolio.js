@@ -80,11 +80,18 @@ if (Meteor.isClient) {
     target.parent().siblings('.caption').text(target.data('text'));
   },
   });
+
+  Template.organizations.helpers({
+    organizations : function() {
+      return Organizations.find();
+    }
+  });
 }
 
 if (Meteor.isServer) {
   Projects.remove({});
   Categories.remove({});
+  Organizations.remove({});
   var jeeves = {name: "jeeves",
                 title: "Jeeves, the Robo-Butler",
                 subtitle: "Self-Balancing Two-Wheel Arduino Robot",
@@ -208,7 +215,7 @@ if (Meteor.isServer) {
                 invert: "line-follow",
                 tabs: [{type: "tech", name: "Summary", active_tab: "active-tab"}, {type: "stack", name: "Tech Stack"}],
                 content_boxes: [
-                                  {css_class: '', type: "tech", paragraphs: ["<p>Replay leverages Twitter API data so that events can be 'replayed' with the original audience reactions. Currently, it supports three distinct code-crafted experiences: a curated digest, a live minute-by-minute timeline, and tweets by social influencers and friends. Replay excels at tracking sporting events, concert festivals, and television shows, where you can see exactly what happened at what moment and how the world felt with fine precision. Quality content is curated through a simple upvote/downvote system. It's better than PVR, and a hell of a lot cooler than missing out.</p><p>Replay was originally piloted at Bitmaker Labs, a code bootcamp in downtown Toronto. It was a project I completed shortly after completing their nine-week, immersive web development bootcamp.</p><p>Check out the code on <a href='http://github.com/abali96/Replay/''><span class='white-link'>Github</span></a>.</p>"]},
+                                  {css_class: '', type: "tech", paragraphs: ['<p>Waterloo (UW) Freeloader uses data from Facebook events at the University of Waterloo to help locate free food on campus, sending you an SMS notification with directions to your next meal. In addition to text notifications, there is a simple web interface that allows you access the same information. Food postings are also supplemented by student input. Notifications occur 15 minutes before the event starts, giving you enough time to walk all the way across campus.</p> <p>A feature that allows users to SMS information back to the server about the quantity of food remaining is currently being built. Application of this technology to other verticals is also underway.</p> <p>As expected, inspiration for UW Freeloader came from my poor student budget and a demonstrated demand from my classmates.</p> <p>Check out the code on <a href="http://github.com/abali96/uw_freeloader/"><span class="white-link">Github</span></a>.</p>"']},
                                   {css_class: '', type: "stack",
                                     tech_lists: [
                                       {
@@ -232,18 +239,70 @@ if (Meteor.isServer) {
                   webdev_gallery: {
                       invert: "line-follow",
                       images : [
-                        {image_classes: "image-wrapper active-image", background_image:"background-image: url('/projects/replay/replay.png')", image_number: "1", caption:"Welcome to replay."},
-                        {image_classes: "image-wrapper", background_image:"background-image: url('/projects/replay/homepage.png')", image_number: "2", caption:"After logging in, Replay dives straight into its event archives - recent events tracked by other users."},
-                        {image_classes: "image-wrapper", background_image:"background-image: url('/projects/replay/edgefest.png')", image_number: "3", caption:"Edgefest, the summer concert series, has this auto-generated and styled landing page with auto-generated timeslots based on peaks in tweet activity during the event."},
-                        {image_classes: "image-wrapper", background_image:"background-image: url('/projects/replay/tweets.png')", image_number: "4", caption:"Replay knows to start tracking before the doors open and ensures that event 'VIP's tweets are tracked seperately to guarantee quality content. Here, VIPs are the bands, organizers, and trusted media."},
-                        {image_classes: "image-wrapper", background_image:"background-image: url('/projects/replay/pictures.png')", image_number: "5", caption:"The most popular pictures from Said The Whale's set are featured paired with an upvote/downvote button for the community to curate relevant content."},
-                        {image_classes: "image-wrapper", background_image:"background-image: url('/projects/replay/timeline.png')", image_number: "6", caption:"Minute-by-minute scrollable timeline where you can witness audience reactions as if they were live. You can see exactly what happened at what moment in quasi 'real time', just like the tweet says!"},
-                        {image_classes: "image-wrapper", background_image:"background-image: url('/projects/replay/gallery.png')", image_number: "7", caption:"Gallery mode to get a quick snapshot of the event."},
+                        {image_classes: "image-wrapper active-image", background_image:"background-image: url('/projects/replay/replay.png')", caption:"Welcome to Replay."},
+                        {image_classes: "image-wrapper", background_image:"background-image: url('/projects/replay/homepage.png')", caption:"After logging in, Replay dives straight into its event archives - recent events tracked by other users."},
+                        {image_classes: "image-wrapper", background_image:"background-image: url('/projects/replay/edgefest.png')", caption:"Edgefest, the summer concert series, has this auto-generated and styled landing page with auto-generated timeslots based on peaks in tweet activity during the event."},
+                        {image_classes: "image-wrapper", background_image:"background-image: url('/projects/replay/tweets.png')", caption:"Replay knows to start tracking before the doors open and ensures that event 'VIP's tweets are tracked seperately to guarantee quality content. Here, VIPs are the bands, organizers, and trusted media."},
+                        {image_classes: "image-wrapper", background_image:"background-image: url('/projects/replay/pictures.png')", caption:"The most popular pictures from Said The Whale's set are featured paired with an upvote/downvote button for the community to curate relevant content."},
+                        {image_classes: "image-wrapper", background_image:"background-image: url('/projects/replay/timeline.png')", caption:"Minute-by-minute scrollable timeline where you can witness audience reactions as if they were live. You can see exactly what happened at what moment in quasi 'real time', just like the tweet says!"},
+                        {image_classes: "image-wrapper", background_image:"background-image: url('/projects/replay/gallery.png')", caption:"Gallery mode to get a quick snapshot of the event."},
                       ]
                   }
-                    };
+              };
+
+    var freeloader = {name: "freeloader",
+                title: "Freeloader, Free Food Finder",
+                background_image: 'background-image: url("");',
+                tabs: [{type: "tech", name: "Summary", active_tab: "active-tab"}, {type: "stack", name: "Tech Stack"}],
+                content_boxes: [
+                                  {css_class: '', type: "tech", paragraphs: ["<p>Replay leverages Twitter API data so that events can be 'replayed' with the original audience reactions. Currently, it supports three distinct code-crafted experiences: a curated digest, a live minute-by-minute timeline, and tweets by social influencers and friends. Replay excels at tracking sporting events, concert festivals, and television shows, where you can see exactly what happened at what moment and how the world felt with fine precision. Quality content is curated through a simple upvote/downvote system. It's better than PVR, and a hell of a lot cooler than missing out.</p><p>Replay was originally piloted at Bitmaker Labs, a code bootcamp in downtown Toronto. It was a project I completed shortly after completing their nine-week, immersive web development bootcamp.</p><p>Check out the code on <a href='http://github.com/abali96/Replay/''><span class='white-link'>Github</span></a>.</p>"]},
+                                  {css_class: '', type: "stack",
+                                    tech_lists: [
+                                      {
+                                        css_class: 'tech-list',
+                                        name: "Back-End",
+                                        list_elements: ["Ruby on Rails 4", "Custom rake tasks to refresh data from Facebook API (Koala gem)", "DelayedJob to queue Twilio API streams", "Google Maps for directions"]},
+                                      {
+                                        css_class: 'tech-list',
+                                        name: "Core Algorithm",
+                                        list_elements: ["Natural language processing/string parsing in conjunction with conditional probability to determine if event serves free food"]
+                                      },
+                                      {
+                                        css_class: 'tech-list',
+                                        name: "Core Algorithms",
+                                        list_elements: ["SASS preprocessor", "CSS3 transitions"]
+                                      },
+                                    ],
+                                  },
+                                ],
+                  webdev_gallery: {
+                      images : [
+                        {image_classes: "image-wrapper active-image", background_image:"background-image: url('/projects/freeloader/homepage.png')", caption:"The Waterloo Freeloader web interface. Each card displays the upcoming events on campus with free food, what kind of food will be served, and directions are just one click away."},
+                        {image_classes: "image-wrapper", background_image:"background-image: url('/projects/freeloader/android.png')", caption:"A sample SMS notification a user would receive. Again, directions are one tap away."},
+                      ]
+                  }
+              };
 
   Categories.insert({name: "robotics-wrapper", projects: [jeeves, matrix, breathaliver, adelaide, frame_me]});
-  Categories.insert({name: "webdev-wrapper", projects: [replay]});
+  Categories.insert({name: "webdev-wrapper", projects: [replay, freeloader]});
+  
+  var voltera = {link: "http://voltera.io/", style:"background-image: url(organizations/voltera.png); background-size: 80%; background-repeat:no-repeat", name: "Voltera", position: "Software Developer", role: "PCB printer motion planning algorithms and UI/UX design."};
+  var deca = {link: "http://deca.ca", style:"background-image: url(organizations/deca.png); background-size: 110%;", name: "DECA Ontario", position: "International Winner", role: "Consulted for Alterna Savings in online strategy case competition."};
+  var bitmaker = {link: "http://www.bitmakerlabs.com", style:"background-image: url('organizations/bitmaker2.png'); background-size: 100%;", name: "Bitmaker Labs", position: "Alumnus", role: "Immersive web development bootcamp in Toronto."};
+  var mytf = {link: "http://www.markhamyouth.com", style:"background-image: url('organizations/mmyc.png'); background-size: 90%;", name: "Markham Mayor's Council", position: "Director", role: "Reached 20,000 youth through holding 20 large-scale events."};
+  var glowstik = {link: "http://www.glowstik.ca", style:"background-image: url(organizations/glowstik.png); background-size: 100%;", name: "Glowstik Social Marketing", position:"Head of Strategy", role:"A social media marketing consultancy in Toronto."};
+  var phasma = {link: "http://phasmaband.bandcamp.com/", style:"background-image: url('organizations/phasma.jpg'); background-size: 100%;", name: "Phasma", position:"Studio and Live Percussionist", role:"A punk rock band I co-founded. Recorded 4 studio EPs."};
+  var soccer = {link: "http://www.u-msc.com/Default.asp?id=home&l=1", style:"background-image: url('organizations/umsc.png'); background-size: 85%; background-repeat:no-repeat", name: "UM Soccer Club", position:"Defenseman", role:"Played defense at the Unionville-Milliken Soccer Club."};
+  var top_scholar = {link: "http://www.yrdsb.edu.on.ca/pdfs/w/news/NW1407081.pdf", style:"background-image: url(https://pbs.twimg.com/profile_images/494835763326885889/MOygWXwZ.png); background-size: 95%;", name: "York School Board", position:"Top Scholar", role:"Achieved 3rd highest graduating average out of 115,000 students."};
+  var ccs = {link: "https://www.youtube.com/watch?v=HAlkA579Lp4", style:"background-image: url(http://www.cancer.ca/img/CCSSite/ccs_logo_fb.png); background-size: 100%;", name: "Canadian Cancer Society", position:"Youth Council President", role:"Coordinated $10,000 in donations across York Region."};
+  Organizations.insert(voltera);
+  Organizations.insert(bitmaker);
+  Organizations.insert(deca);
+  Organizations.insert(mytf);
+  Organizations.insert(glowstik);
+  Organizations.insert(phasma);
+  Organizations.insert(soccer);
+  Organizations.insert(top_scholar);
+  Organizations.insert(ccs);
 }
 

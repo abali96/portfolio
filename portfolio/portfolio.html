@@ -11,6 +11,7 @@
 		{{#each categories}}
 			{{> category}}
 		{{/each}}
+		{{> organizations}}
 	</div>
 </body>
 
@@ -26,6 +27,27 @@
 		{{> webdev_gallery}}
 	</section>
 </template>
+
+<template name="organizations">
+	<div id="orgs-wrapper">
+		<section class="section">
+			<a name="organizations"></a>
+			<div class="background project home-tint" style="background-image: url('organizations/background.jpg')"></div>
+			<h1 class='title'>Organizations</h1>
+			<div id="organizations">
+				{{#each organizations}}
+					<div class="organization-block">
+						<a href={{link}} target="_blank" class='org-image' style={{style}}></a>
+						<p class="org-name">{{name}}</p>
+						<p class="position">{{position}}</p>
+						<p class="role">{{role}}</p>
+					</div>
+				{{/each}}
+			</div>
+		</section>
+	</div>
+</template>
+
 
 <template name="webdev_gallery">
 	{{#with webdev_gallery}}
