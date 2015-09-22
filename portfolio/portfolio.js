@@ -80,7 +80,7 @@ if (Meteor.isServer) {
                                     },
                                     {
                                       css_class: 'electrical',
-                                      name: "Key Software Learning",
+                                      name: "Software",
                                       list_elements: ["C++/Arduino IDE", "Preprocessor commands", "FIFO buffers", "PID control loop + tuning", "Serial/I2C comms."],
                                     },
                                     ],
@@ -104,17 +104,17 @@ if (Meteor.isServer) {
                           },
                           {
                             css_class: 'software',
-                            name: "Key Software Learning",
+                            name: "Software",
                             list_elements: ["C++", "IAR embedded workbench", "Fuzzy logic", "Light sensor calibration", "Efficient power use"],
                           },
                         ]},
-                        {css_class: 'gall', type: "gallery", background_image: 'background-image: url("http://i.imgur.com/nID76MQ.jpg")', images: ['background-image: url("http://i.imgur.com/m5USp5d.jpg")', 'background-image: url("http://i.imgur.com/K9qqxCJ.jpg")', 'background-image: url("http://i.imgur.com/ZyaEBiy.jpg")', 'background-image: url("http://i.imgur.com/9B93fIZ.jpg")']}
+                        {css_class: 'gall', type: "gallery", background_image: 'background-image: url("projects/adelaide/car.jpg")', images: ['background-image: url("projects/adelaide/computer.jpg")', 'background-image: url("projects/adelaide/track.jpg")', 'background-image: url("projects/adelaide/robot.jpeg")', 'background-image: url("projects/adelaide/me.jpg")']}
                   ]
                 };
     var frame_me = {name: "frameMe",
                 title: "FrameMe, Living Photo Frame",
                 subtitle: "500px Pictures That Compliment Your Day",
-                background_image: 'background-image: url("http://i.imgur.com/yKutko5.jpg")',
+                background_image: 'background-image: url("projects/frame_me/background.jpg")',
                 tabs: [{type: "tech", name: "Tech Stack", active_tab: "active-tab"}, {type: "gallery", name: "Gallery"}],
                 content_boxes: [
                                   {css_class: '', type: "tech", paragraphs: ['<p>FrameMe is a living photo frame that dynamically curates and displays 500px (social media) photos based on the current time of day and weather. FrameMe provides an endless stream of pictures, cycling every minute and renewing its collection every hour. Current features being built include motion detection for efficient power management and natural language processing for verbal commands. </p> <p>Check out the <a href="https://medium.com/@abali96/building-a-digital-photo-frame-with-500px-raspberry-pi-and-ruby-f3639fd294ce"><span class="link">build blog</span></a> for full implementation details and source code.</p>'],
@@ -126,12 +126,12 @@ if (Meteor.isServer) {
                                     },
                                     {
                                       css_class: 'electrical',
-                                      name: "Key Software Learning",
+                                      name: "Software",
                                       list_elements: ["Raspbian OS", "*NIX environment configuration", "Ruby scripting", "500px API integration"],
                                     },
                                     ],
                                   },
-                                  {css_class: 'gall', type: "gallery", images: ['background-image: url("http://i.imgur.com/AkDrCgm.jpg")', 'background-image: url("http://i.imgur.com/aZtaCCK.jpg")']},
+                                  {css_class: 'gall', type: "gallery", images: ['background-image: url("projects/frame_me/me.jpg")', 'background-image: url("projects/frame_me/side.jpg")']},
                                 ]
                     };
     var breathaliver = {name: "breathaliver",
@@ -150,7 +150,7 @@ if (Meteor.isServer) {
                                     },
                                     {
                                       css_class: 'electrical',
-                                      name: "Key Software Learning",
+                                      name: "Software",
                                       list_elements: ["C++, Python, Ruby", "Uber API", "Twilio API", "Sensor calibration"],
                                     },
                                     ],
@@ -158,7 +158,31 @@ if (Meteor.isServer) {
                                   {css_class: 'gall', type: "gallery", images: ['background-image: url("/projects/breathaliver/breathaliver_vertical.jpg")', 'background-image: url("/projects/breathaliver/breathaliver_justin.jpg")', 'background-image: url("/projects/breathaliver/wearewearables_conference.jpg")']},
                                 ],
                     };
-  var matrix = {name: "Matrix "};
-  Categories.insert({name: "robotics-wrapper", projects: [jeeves, breathaliver, frame_me, adelaide,]});
+    var matrix = {name: "matrix_assistant",
+                title: "Mate, the Desktop Assistant",
+                subtitle: "Internet-connected LED Matrix Display",
+                background_image: 'background-image: url("/projects/mate/background.jpg");',
+                invert: "line-follow",
+                tabs: [{type: "tech", name: "Tech Stack", active_tab: "active-tab"}, {type: "gallery", name: "Gallery"}, {type: "video", name: "Video"}],
+                content_boxes: [
+                                  {css_class: '', type: "tech", paragraphs: ["<p>Mate is a desktop assistant that displays live stock market, time, and weather data on a homemade 12X5 LED Matrix display.</p> <p>All display logic (including multiplexing, character mapping, and scrolling text) was designed and written in-house. A custom web API I designed serves a Particle Photon the necessary data via webhooks, which is then relayed to an Arduino Mega which handles the display.<p>All of this is tied together using a custom PCB I designed in Eagle CAD. See the code and PCB <a href='https://github.com/JustJLim/matrix-weather-clock'><span class='link'>here</span></a>.</p>"],
+                                    tech_lists: [
+                                    {
+                                      css_class: 'electrical',
+                                      name: "Electrical Components",
+                                      list_elements:["Custom PCB (Eagle CAD)", "Arduino Mega", "Particle Photon", "4017 Decade Counter"],
+                                    },
+                                    {
+                                      css_class: 'electrical',
+                                      name: "Software",
+                                      list_elements: ["Arduino C, Particle C", "Python backend (Bottle, Heroku)", "Yahoo Finance", "ForecastIO"],
+                                    },
+                                    ],
+                                  },
+                                  {css_class: 'gall', type: "gallery", images: ['background-image: url("/projects/mate/layout.png")', 'background-image: url("/projects/mate/schematic.png")', 'background-image: url("/projects/mate/pcb.jpg")', 'background-image: url("/projects/mate/prototype.jpg")']},
+                                  {css_class: 'video-wrapper', type: "video", video_text: "<p>We see the time, the current weather (rain) and Apple's current share price.</p>", video: '<iframe width="100%" height="80%" src="https://www.youtube.com/embed/FiXA4B3V5pA" frameborder="0" allowfullscreen></iframe>'},
+                                ],
+                    };
+  Categories.insert({name: "robotics-wrapper", projects: [jeeves, matrix, breathaliver, frame_me, adelaide]});
 }
 
