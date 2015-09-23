@@ -100,6 +100,7 @@ Meteor.startup(function() {
                 title: "Jeeves, the Robo-Butler",
                 subtitle: "Self-Balancing Two-Wheel Arduino Robot",
                 background_image: 'background-image: url("/projects/jeeves/jeeves.jpg")',
+                right_offset: "right: -0.3vw",
                 tabs:[{type: "tech", name: "Tech Stack", active_tab: "active-tab"}, {type: "gallery", name: "Gallery"}, {type: "video", name: "Video"}],
                 content_boxes: [
                                   {css_class: '', type: "tech", paragraphs: ['<p>Jeeves is a "mini Segway" that features a PID control loop with basic external disturbance rejection and the ability to respond to directional commands over serial. All electro-mechanical design was done in-house using SolidWorks and the chassis was machined myself using the mill, drill press, brake press, and hand tools on campus.</p><p>Featured in the <a href="http://iwarrior.uwaterloo.ca/2015/01/28/30267/waterloo-engineerings-hidden-gems/#hide"><span class="link">The Iron Warrior</span></a>, the Waterloo Engineering newspaper. Check out the code on <a href="http://github.com/abali96/ButlerRobot/"><span class="link">Github</span></a>.</p>'],
@@ -145,7 +146,7 @@ Meteor.startup(function() {
     var frame_me = {name: "frameMe",
                 title: "FrameMe, Living Photo Frame",
                 subtitle: "500px Pictures That Compliment Your Day",
-                background_image: 'background-image: url("projects/frame_me/background.jpg")',
+                right_offset: "right: -0.3vw",
                 tabs: [{type: "tech", name: "Tech Stack", active_tab: "active-tab"}, {type: "gallery", name: "Gallery"}],
                 content_boxes: [
                                   {css_class: '', type: "tech", paragraphs: ['<p>FrameMe is a living photo frame that dynamically curates and displays 500px (social media) photos based on the current time of day and weather. FrameMe provides an endless stream of pictures, cycling every minute and renewing its collection every hour. Current features being built include motion detection for efficient power management and natural language processing for verbal commands. </p> <p>Check out the <a href="https://medium.com/@abali96/building-a-digital-photo-frame-with-500px-raspberry-pi-and-ruby-f3639fd294ce"><span class="link">build blog</span></a> for full implementation details and source code.</p>'],
@@ -168,7 +169,8 @@ Meteor.startup(function() {
     var breathaliver = {name: "breathaliver",
                 title: "BreathAliver, IOT breathalyzer",
                 subtitle: "Wearable, Uber-Connected Breathalyzer",
-                background_image: 'background-image: url("/projects/breathaliver/breathaliver_cropped.jpg");',
+                background_image: 'background-image: url("projects/frame_me/background.jpg")',
+                right_offset: "right: -0.3vw",
                 tabs: [{type: "tech", name: "Tech Stack", active_tab: "active-tab"}, {type: "gallery", name: "Gallery"}],
                 content_boxes: [
                                   {css_class: '', type: "tech", paragraphs: ['<p>BreathAliver is wearable breathalyzer that detects your blood alcohol concentration as you approach your car, and automatically calls an Uber cab to your location (or texts a friend!) if you’ve had too much to drink. It uses NFC to determine when the user approaches their car, acting as a pre-emptive solution to drunk driving.</p><p>To minimize cost, BreathAliver collects temperature and pressure data about the user\'s breath, correlating these metrics to relative levels of blood alcohol concentration.</p><p>This project placed 1st at <a href="https://wearhackstoronto.splashthat.com/"<span class="link">Wearhacks Toronto 2015</span></a>, and was featured at the <a href="http://www.wearewearables.com/july-2015-toronto/"><span class="link">Toronto July WeAreWearables conference</span></a> at these Discovery District.'],
@@ -258,6 +260,7 @@ Meteor.startup(function() {
     var freeloader = {name: "freeloader",
                 title: "Freeloader, Free Food Finder",
                 background_image: 'background-image: url("https://images.unsplash.com/photo-1416677357736-79cd2bce22c5?q=80&fm=jpg&s=947a12b70e91e9781093dd7a068beaab")',
+                right_offset: "right: -0.3vw",
                 tabs: [{type: "tech", name: "Summary", active_tab: "active-tab"}, {type: "stack", name: "Tech Stack"}],
                 content_boxes: [
                                   {css_class: '', type: "tech", paragraphs: ["<p>Waterloo (UW) Freeloader uses data from Facebook events at the University of Waterloo to help locate free food on campus, sending you an SMS notification with directions to your next meal. In addition to text notifications, there is a simple web interface that allows you access the same information. Food postings are also supplemented by student input. Notifications occur 15 minutes before the event starts, giving you enough time to walk all the way across campus.</p> <p>A feature that allows users to SMS information back to the server about the quantity of food remaining is currently being built. Application of this technology to other verticals is also underway.</p> <p>As expected, inspiration for UW Freeloader came from my poor student budget and a demonstrated demand from my classmates.</p> <p>Check out the code on <a href='http://github.com/abali96/uw_freeloader/'><span class='link'>Github</span></a>.</p>"]},
