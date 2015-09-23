@@ -128,7 +128,6 @@ $(document).on('ready page:load', function() {
     $(this).removeClass('inactive-tab, active-tab');
     $(this).siblings('.tab').removeClass('active-tab');
     $(this).addClass('active-tab');
-
   });
 
   $('.content, .webdev-gall, .mobile-gallery').on('mouseover', '.image-wrapper', function() {

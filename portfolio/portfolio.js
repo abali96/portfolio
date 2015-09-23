@@ -27,7 +27,6 @@ if (Meteor.isClient) {
   });
 
 
-
   Template.content_box.helpers({
     isTech : function() {
       return this.type == 'tech';
@@ -240,7 +239,7 @@ if (Meteor.isServer) {
                       invert: "line-follow",
                       images : [
                         {image_classes: "image-wrapper active-image", background_image:"background-image: url('/projects/replay/replay.png')", caption:"Welcome to Replay."},
-                        {image_classes: "image-wrapper", background_image:"background-image: url('/projects/replay/homepage.png')", caption:"After logging in, Replay dives straight into its event archives - recent events tracked by other users."},
+                        {image_classes: "image-wrapper", background_image:"background-image: url('/projects/replay/homepage.jpeg')", caption:"After logging in, Replay dives straight into its event archives - recent events tracked by other users."},
                         {image_classes: "image-wrapper", background_image:"background-image: url('/projects/replay/edgefest.png')", caption:"Edgefest, the summer concert series, has this auto-generated and styled landing page with auto-generated timeslots based on peaks in tweet activity during the event."},
                         {image_classes: "image-wrapper", background_image:"background-image: url('/projects/replay/tweets.png')", caption:"Replay knows to start tracking before the doors open and ensures that event 'VIP's tweets are tracked seperately to guarantee quality content. Here, VIPs are the bands, organizers, and trusted media."},
                         {image_classes: "image-wrapper", background_image:"background-image: url('/projects/replay/pictures.png')", caption:"The most popular pictures from Said The Whale's set are featured paired with an upvote/downvote button for the community to curate relevant content."},

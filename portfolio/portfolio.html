@@ -7,13 +7,57 @@
 </head>
 
 <body>
+	<nav>
+	  <img src="landing/purknits2.jpg" class="circular-face">
+	  <a href="http://ca.linkedin.com/in/abali96"><img src="landing/linkedin copy.png" class="logo linkedin"></a>
+	  <a href="http://github.com/abali96"><img src="landing/github.png" class="logo github"></a>
+	  <a href="http://twitter.com/abali96"><img src="landing/twitter.png" class="logo twitter"></a>
+	</nav>
+	<div id="intro-wrapper" class='section'>
+		{{> landing_section}}
+	</div>
 	<div id="content-wrapper">
+		{{> nav}}
 		{{#each categories}}
 			{{> category}}
 		{{/each}}
 		{{> organizations}}
 	</div>
 </body>
+
+<template name="landing_section">
+	<img class="background" src="landing/background.jpg">
+	  <h1 class='home name'>
+	    ARJUN BALI
+	  </h1>
+	  <h2 class='home sub'>
+	    Engineer. Designer. Developer.
+	  </h2>
+
+	  <div class='categories web'>
+	    <div class='button-circ home' style='background: url(projects/adelaide/robot.jpeg); background-size: 23vw; -webkit-filter: contrast(1.2) brightness(0.9) hue-rotate(-10deg); filter: contrast(1.2) brightness(0.9) hue-rotate(-10deg);'>
+	      <p id="robotics">MECHATRONICS</p>
+	    </div>
+	    <div class='button-circ home' style='background: url(projects/replay/homepage.jpeg); background-size: 21vw; background-position: left;   -webkit-filter: contrast(1.2) brightness(0.9) hue-rotate(-10deg);
+	  filter: contrast(1.2) brightness(0.9) hue-rotate(-10deg);'>
+	      <p id="webdev">WEB DEV</p>
+	    </div>
+	    <div class='button-circ home' style='background: url(organizations/background.jpg); background-size: 22vw; background-position: left;   -webkit-filter: contrast(1.2) brightness(0.9) hue-rotate(-10deg);
+	  filter: contrast(1.2) brightness(0.9) hue-rotate(-10deg);'>
+	      <p id="orgs">ORGANIZATIONS</p>
+	    </div>
+	  </div>
+</template>
+
+
+<template name="nav">
+	<div id='nav'>
+	  <h1 class='nav-header'>ARJUN BALI</h1>
+	  <h1 class='nav-options'><span data-cat = "robotics">MECHATRONICS</span><span data-cat = "webdev">WEB DEV</span><span data-cat ="orgs">ORGANIZATIONS</span></h1>
+	  <a class='contact-button' href="mailto:arjun.bali96@gmail.com?subject=Let's Chat">
+	  CONTACT</a>
+	</div>
+</template>
 
 <template name="project">
 	<section class="section {{invert}}">

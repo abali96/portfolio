@@ -103,7 +103,6 @@ div.description.line-follow .content {
   -webkit-border-radius: 150px;
   -moz-border-radius: 150px;
   border: 3px solid rgba(255, 255, 255, 0.9);
-  cursor: pointer;
 }
 
 .logo {
@@ -143,7 +142,7 @@ div.description.line-follow .content {
 }
 
 .name {
-  top: 10vw;
+  top: 5vw;
   font-size: 9vw;
   font-family: 'Fjalla One', sans-serif;
   position: absolute;
@@ -222,7 +221,8 @@ div.description.line-follow .content {
   font-family: 'Fjalla One';
   z-index: 100;
   // box-shadow: 3px 3px 2px #d3d3d3;
-  padding-top: 0.8vw;
+  padding-top: 0.4vw;
+  padding-bottom: 0.4vw;
   background-color: black;
   & h1, a {
     position: relative;
@@ -966,6 +966,7 @@ footer {
     border: 3px solid rgba(255, 255, 255, 0.9);
     cursor: pointer;
     display: none;
+    overflow: hidden;
   }
 
   .logo {
