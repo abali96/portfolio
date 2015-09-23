@@ -32,6 +32,7 @@ if (Meteor.isClient) {
     });
   });
 
+
   Template.content_box.helpers({
     isTech : function() {
       return this.type == 'tech';
@@ -70,6 +71,26 @@ if (Meteor.isClient) {
       $(display).css({'background-image' : backgroundImage});
       target.parent().siblings('.caption').text(target.data('text'));
     },
+    'click .next' : function(event) {
+      var scrollto;
+      var target = $(event.target);
+      if (target.parent().parent().index() == target.parent().parent().siblings().length) {
+        if (target.parent().parent().parent().next().length === 0) {
+          scrollto = target.parent().parent().parent().next();
+        } else {
+          scrollto = target.parent().parent().parent().next();
+        }
+      } else {
+        if (target.parent().parent().parent().next().length === 0) {
+          scrollto = target.parent().parent().next().next().find('.background');
+        } else {
+         scrollto = target.parent().parent().nextAll("section").not(".mobile-gallery");
+        }
+      }
+      $('html, body').animate({
+          scrollTop: $(scrollto).offset().top - $('#nav').height()
+      }, 400);
+    }
   });
 
   Template.webdev_gallery.events({
@@ -102,6 +123,7 @@ Meteor.startup(function() {
                 background_image: 'background-image: url("/projects/jeeves/jeeves.jpg")',
                 right_offset: "right: -0.3vw",
                 tabs:[{type: "tech", name: "Tech Stack", active_tab: "active-tab"}, {type: "gallery", name: "Gallery"}, {type: "video", name: "Video"}],
+                next_text: "Next  &#8595;",
                 content_boxes: [
                                   {css_class: '', type: "tech", paragraphs: ['<p>Jeeves is a "mini Segway" that features a PID control loop with basic external disturbance rejection and the ability to respond to directional commands over serial. All electro-mechanical design was done in-house using SolidWorks and the chassis was machined myself using the mill, drill press, brake press, and hand tools on campus.</p><p>Featured in the <a href="http://iwarrior.uwaterloo.ca/2015/01/28/30267/waterloo-engineerings-hidden-gems/#hide"><span class="link">The Iron Warrior</span></a>, the Waterloo Engineering newspaper. Check out the code on <a href="http://github.com/abali96/ButlerRobot/"><span class="link">Github</span></a>.</p>'],
                                     tech_lists: [
@@ -127,6 +149,8 @@ Meteor.startup(function() {
                   right_offset: "right: -2vw;",
                   sub_right_offset: "right: -0.8vw",
                   invert: "line-follow",
+                  flip: "flip",
+                  next_text: "Next  &#8595;",
                   tabs:[{type: "tech", name: "Tech Stack", active_tab: "active-tab"}, {type: "gallery", name: "Gallery"}],
                   content_boxes: [
                       {css_class: '', type: "tech", paragraphs: ["<p>Adelaide explores the intersection of autonomous robotics and environmental sustainability. Two hydrogen fuel cells are located on-board the car chassis, used to power all circuitry including the drivetrain. Adelaide's success was determined by its ability to navigate an arbitrary course marked by a black line on a white surface, making intelligent decisions at forks and dead-ends. Efficient power management algorithms were written to optimize run time at 19 minutes.</p>"],
@@ -151,6 +175,7 @@ Meteor.startup(function() {
                 right_offset: "right: -0.3vw",
                 background_image: 'background-image: url("/projects/frame_me/background.jpg")',
                 tabs: [{type: "tech", name: "Tech Stack", active_tab: "active-tab"}, {type: "gallery", name: "Gallery"}],
+                next_text: "Next  &#8595;",
                 content_boxes: [
                                   {css_class: '', type: "tech", paragraphs: ['<p>FrameMe is a living photo frame that dynamically curates and displays 500px (social media) photos based on the current time of day and weather. FrameMe provides an endless stream of pictures, cycling every minute and renewing its collection every hour. Current features being built include motion detection for efficient power management and natural language processing for verbal commands. </p> <p>Check out the <a href="https://medium.com/@abali96/building-a-digital-photo-frame-with-500px-raspberry-pi-and-ruby-f3639fd294ce"><span class="link">build blog</span></a> for full implementation details and source code.</p>'],
                                     tech_lists: [
@@ -175,6 +200,7 @@ Meteor.startup(function() {
                 background_image: 'background-image: url("projects/breathaliver/breathaliver_cropped.jpg")',
                 right_offset: "right: -0.3vw",
                 tabs: [{type: "tech", name: "Tech Stack", active_tab: "active-tab"}, {type: "gallery", name: "Gallery"}],
+                next_text: "Next  &#8595;",
                 content_boxes: [
                                   {css_class: '', type: "tech", paragraphs: ['<p>BreathAliver is wearable breathalyzer that detects your blood alcohol concentration as you approach your car, and automatically calls an Uber cab to your location (or texts a friend!) if you’ve had too much to drink. It uses NFC to determine when the user approaches their car, acting as a pre-emptive solution to drunk driving.</p><p>To minimize cost, BreathAliver collects temperature and pressure data about the user\'s breath, correlating these metrics to relative levels of blood alcohol concentration.</p><p>This project placed 1st at <a href="https://wearhackstoronto.splashthat.com/"<span class="link">Wearhacks Toronto 2015</span></a>, and was featured at the <a href="http://www.wearewearables.com/july-2015-toronto/"><span class="link">Toronto July WeAreWearables conference</span></a> at these Discovery District.'],
                                     tech_lists: [
@@ -200,6 +226,8 @@ Meteor.startup(function() {
                 sub_right_offset: "right: -0.8vw;",
                 background_image: 'background-image: url("/projects/mate/background.jpg");',
                 invert: "line-follow",
+                flip: "flip",
+                next_text: "Next  &#8595;",
                 tabs: [{type: "tech", name: "Tech Stack", active_tab: "active-tab"}, {type: "gallery", name: "Gallery"}, {type: "video", name: "Video"}],
                 content_boxes: [
                                   {css_class: '', type: "tech", paragraphs: ["<p>Mate is a desktop assistant that displays live stock market, time, and weather data on a homemade 12X5 LED Matrix display.</p> <p>All display logic (including multiplexing, character mapping, and scrolling text) was designed and written in-house. A custom web API I designed serves a Particle Photon the necessary data via webhooks, which is then relayed to an Arduino Mega which handles the display.<p>All of this is tied together using a custom PCB I designed in Eagle CAD. See the code and PCB <a href='https://github.com/JustJLim/matrix-weather-clock'><span class='link'>here</span></a>.</p>"],
@@ -224,7 +252,9 @@ Meteor.startup(function() {
                 title: "Replay, Social Event Archive",
                 background_image: 'background-image: url("projects/replay/background.png")',
                 invert: "line-follow",
+                flip: "flip",
                 right_offset: "right: -2vw;",
+                next_text: "Next  &#8595;",
                 tabs: [{type: "tech", name: "Summary", active_tab: "active-tab"}, {type: "stack", name: "Tech Stack"}],
                 content_boxes: [
                                   {css_class: '', type: "tech", paragraphs: ["<p>Replay leverages Twitter API data so that events can be 'replayed' with the original audience reactions. Currently, it supports three distinct code-crafted experiences: a curated digest, a live minute-by-minute timeline, and tweets by social influencers and friends. Replay excels at tracking sporting events, concert festivals, and television shows, where you can see exactly what happened at what moment and how the world felt with fine precision. Quality content is curated through a simple upvote/downvote system. It's better than PVR, and a hell of a lot cooler than missing out.</p><p>Replay was originally piloted at Bitmaker Labs, a code bootcamp in downtown Toronto. It was a project I completed shortly after completing their nine-week, immersive web development bootcamp.</p><p>Check out the code on <a href='http://github.com/abali96/Replay/''><span class='link'>Github</span></a>.</p>"]},
@@ -268,6 +298,7 @@ Meteor.startup(function() {
                 background_image: 'background-image: url("projects/freeloader/background.png")',
                 right_offset: "right: -0.3vw",
                 tabs: [{type: "tech", name: "Summary", active_tab: "active-tab"}, {type: "stack", name: "Tech Stack"}],
+                next_text: "Next  &#8595;",
                 content_boxes: [
                                   {css_class: '', type: "tech", paragraphs: ["<p>Waterloo (UW) Freeloader uses data from Facebook events at the University of Waterloo to help locate free food on campus, sending you an SMS notification with directions to your next meal. In addition to text notifications, there is a simple web interface that allows you access the same information. Food postings are also supplemented by student input. Notifications occur 15 minutes before the event starts, giving you enough time to walk all the way across campus.</p> <p>A feature that allows users to SMS information back to the server about the quantity of food remaining is currently being built. Application of this technology to other verticals is also underway.</p> <p>As expected, inspiration for UW Freeloader came from my poor student budget and a demonstrated demand from my classmates.</p> <p>Check out the code on <a href='http://github.com/abali96/uw_freeloader/'><span class='link'>Github</span></a>.</p>"]},
                                   {css_class: '', type: "stack",

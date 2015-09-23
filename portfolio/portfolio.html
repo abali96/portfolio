@@ -40,7 +40,7 @@
 	    </div>
 	    <div class='button-circ home' style='background: url(projects/replay/homepage.jpeg); background-size: 21vw; background-position: left;   -webkit-filter: contrast(1.2) brightness(0.9) hue-rotate(-10deg);
 	  filter: contrast(1.2) brightness(0.9) hue-rotate(-10deg);'>
-	      <p id="webdev">WEB DEV</p>
+	      <p id="webdev">WEB</p>
 	    </div>
 	    <div class='button-circ home' style='background: url(organizations/background.jpg); background-size: 22vw; background-position: left;   -webkit-filter: contrast(1.2) brightness(0.9) hue-rotate(-10deg);
 	  filter: contrast(1.2) brightness(0.9) hue-rotate(-10deg);'>
@@ -53,7 +53,7 @@
 <template name="nav">
 	<div id='nav'>
 	  <h1 class='nav-header'>ARJUN BALI</h1>
-	  <h1 class='nav-options'><span data-cat = "robotics">MECHATRONICS</span><span data-cat = "webdev">WEB DEV</span><span data-cat ="orgs">ORGANIZATIONS</span></h1>
+	  <h1 class='nav-options'><span data-cat = "robotics">MECHATRONICS</span><span data-cat = "webdev">WEB</span><span data-cat ="orgs">ORGANIZATIONS</span></h1>
 	  <a class='contact-button' href="mailto:arjun.bali96@gmail.com?subject=Let's Chat">
 	  CONTACT</a>
 	</div>
@@ -117,6 +117,7 @@
 		{{#each content_boxes}}
 			{{> content_box}}
 		{{/each}}
+	<div class='next {{flip}}' id='towebdev'>{{{next_text}}}</div>
 	</div>
 </template>
 

@@ -746,11 +746,9 @@ div#webdev-wrapper .home-tint {
       font-size: 0.9vw;
       cursor: pointer;
       position: absolute;
-      right: 4vw;
       &.flip {
         position: absolute;
         left: 8.5%;
-        margin: auto auto;
       }
     }
   }

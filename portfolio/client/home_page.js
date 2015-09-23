@@ -138,31 +138,7 @@ $(document).on('ready page:load', function() {
     $(display).attr('id', $(this).attr('id'));
 
     $(this).parent().siblings('.caption').text($(this).data('text'));
-  });
-
-  $('.next').on('click', function() {
-    var scrollto;
-    if ($(this).parent().parent().index() == $(this).parent().parent().siblings().length) {
-      if ($(this).parent().parent().parent().next().length == 0) {
-        scrollto = $(this).parent().parent().parent().next();
-      }
-      else {
-        scrollto = $(this).parent().parent().parent().next();
-      }
-    }
-    else {
-      if ($(this).parent().parent().parent().next().length == 0) {
-        scrollto = $(this).parent().parent().next().next().find('.background');
-      }
-      else {
-       scrollto = $(this).parent().parent().nextAll("section").not(".mobile-gallery")
-      }
-
-    }
-    $('html, body').animate({
-        scrollTop: $(scrollto).offset().top - $('#nav').height()
-    }, 400);
-  });
+  }); 
 
 //END
 });
