@@ -566,6 +566,22 @@ div#contact .home-tint {
   }
 }
 
+div#webdev-wrapper .home-tint {
+  filter: gray; /* IE6-9 */
+  filter: grayscale(25%); /* firefox */
+  -webkit-filter: grayscale(25%); /* Chrome 19+, Safari 6+, Safari 6+ iOS */
+
+  &.home-tint:before {
+      content: "";
+      display: block;
+      position: relative;
+      top: 0;
+      height: 100%;
+      width: 100%;
+      background: rgba(20,20 ,20, 0.9);
+  }
+}
+
 .link {
   color: #d3d3d3;
 }
@@ -625,7 +641,6 @@ div#contact .home-tint {
     width: 10vw;
   }
 }
-//
 #webdev-wrapper {
   section .title {
     width: 40%;
@@ -660,7 +675,7 @@ div#contact .home-tint {
       list-style-type: none;
       margin: 0;
       padding: 0;
-      list-style-type: circle;
+      list-style-type: disc;
       &:first-of-type{
         margin-top: 0.3vw;
       }
@@ -669,64 +684,54 @@ div#contact .home-tint {
         margin-bottom: 1.25vw;
     }
     span {
-      font-weight: 400;
       display: inline-block;
       text-decoration: underline;
       margin-bottom: 0.5vw;
     }
     li {
-      color: rgba(30, 30, 30, 0.6);
-      font-weight: 400;
+      font-weight: 100;
       line-height: 1.3vw;
-      margin-left: 0.5vw;
+      margin-left: 1.2vw;
     }
 
     .tab {
-      // border: 1px solid rgba(25, 25, 25, 0.6);
-      border-bottom: none;
       font-family: "Roboto", sans-serif;
       font-size: 1.3vw;
       font-weight: 100;
       display: inline;
       position: relative;
-      top: 1.1vw;
+      top: 1vw;
       padding-left: 1vw;
       padding-right: 1vw;
       padding-top: 1vw;
       padding-bottom: 1vw;
       cursor: pointer;
-      margin-right: 0.2vw;
-      z-index: 10;
+      background-color: rgba(50, 50, 50, 0.9);
       color: white;
+      margin-right: 0.2vw;
     }
     .active-tab {
-      background-color: white;
-      border: 1px solid rgba(255, 255, 255, 1);
-      border-bottom: 1px solid white;
-      color: black;
-      box-shadow: 5px 0 5px -5px rgba(25,25,25,0.3);
+      background-color: rgba(50, 50, 50, 0.5);
     }
     .content {
-      background-color: white;
-      color: rgba(30, 30, 30, 0.6);
+      background-color: rgba(50, 50, 50, 0.5);
+      color: white;
       width: 80%;
       position: absolute;
-      top: 4.5vw;
+      top: 5vw;
       padding-left: 2vw;
       padding-right: 2vw;
       padding-top: 1vw;
       padding-bototm: 1vw;
       font-family: "Roboto", sans-serif;
-      // border: 1px solid rgba(25, 25, 25, 0.3);
-      // box-shadow: 5px 5px 5px rgba(25,25,25,0.3);
-
       & p {
-        color: rgba(30, 30, 30, 0.6);
+        color: white;
         font-family: "Roboto", sans-serif;
-        font-weight: 400;
+        font-weight: 300;
         font-size: 1vw;
         line-height: 1.5vw;
         position: relative;
+        font-weight: 100;
         top: -1.1vw;
         &:first-of-type {
           padding-top: 0.6vw;
