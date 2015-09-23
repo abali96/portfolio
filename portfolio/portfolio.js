@@ -95,7 +95,6 @@ if (Meteor.isClient) {
 
   Template.webdev_gallery.events({
     "mouseover .image-wrapper" : function(event) {
-      console.log("here");
       var target = $(event.target);
       target.siblings().removeClass('active-image');
       target.addClass('active-image');
@@ -108,7 +107,7 @@ if (Meteor.isClient) {
 
   Template.organizations.helpers({
     organizations : function() {
-      return Organizations.find();
+      return Organizations.find({}, {sort: {date_created: -1}});;
     }
   });
 }
@@ -135,7 +134,7 @@ Meteor.startup(function() {
                                     {
                                       css_class: 'electrical',
                                       name: "Software",
-                                      list_elements: ["C++/Arduino IDE", "Preprocessor commands", "FIFO buffers", "PID control loop + tuning", "Serial/I2C comms."],
+                                      list_elements: ["C++/Arduino IDE", "Preprocessor commands", "Memory management", "PID control loop + tuning", "Serial/I2C comms."],
                                     },
                                     ],
                                   },
@@ -175,7 +174,7 @@ Meteor.startup(function() {
                 right_offset: "right: -0.3vw",
                 background_image: 'background-image: url("/projects/frame_me/background.jpg")',
                 tabs: [{type: "tech", name: "Tech Stack", active_tab: "active-tab"}, {type: "gallery", name: "Gallery"}],
-                next_text: "Next  &#8595;",
+                next_text: "To Web  &#8595;",
                 content_boxes: [
                                   {css_class: '', type: "tech", paragraphs: ['<p>FrameMe is a living photo frame that dynamically curates and displays 500px (social media) photos based on the current time of day and weather. FrameMe provides an endless stream of pictures, cycling every minute and renewing its collection every hour. Current features being built include motion detection for efficient power management and natural language processing for verbal commands. </p> <p>Check out the <a href="https://medium.com/@abali96/building-a-digital-photo-frame-with-500px-raspberry-pi-and-ruby-f3639fd294ce"><span class="link">build blog</span></a> for full implementation details and source code.</p>'],
                                     tech_lists: [
@@ -332,7 +331,7 @@ Meteor.startup(function() {
   Categories.insert({name: "robotics-wrapper", projects: [jeeves, matrix, breathaliver, adelaide, frame_me]});
   Categories.insert({name: "webdev-wrapper", projects: [replay, freeloader]});
   
-  var voltera = {link: "http://voltera.io/", style:"background-image: url(organizations/voltera.png); background-size: 80%; background-repeat:no-repeat", name: "Voltera", position: "Software Developer", role: "PCB printer motion planning algorithms and UI/UX design."};
+  var voltera = {link: "http://voltera.io/", style:"background-image: url(organizations/voltera.jpg); background-color:white; background-size: 80%; background-repeat:no-repeat", name: "Voltera", position: "Software Developer", role: "PCB printer motion planning algorithms and UI/UX design."};
   var deca = {link: "http://deca.ca", style:"background-image: url(organizations/deca.png); background-size: 110%;", name: "DECA Ontario", position: "International Winner", role: "Consulted for Alterna Savings in online strategy case competition."};
   var bitmaker = {link: "http://www.bitmakerlabs.com", style:"background-image: url('organizations/bitmaker2.png'); background-size: 100%;", name: "Bitmaker Labs", position: "Alumnus", role: "Immersive web development bootcamp in Toronto."};
   var mytf = {link: "http://www.markhamyouth.com", style:"background-image: url('organizations/mmyc.png'); background-size: 90%;", name: "Markham Mayor's Council", position: "Director", role: "Reached 20,000 youth through holding 20 large-scale events."};
@@ -341,14 +340,15 @@ Meteor.startup(function() {
   var soccer = {link: "http://www.u-msc.com/Default.asp?id=home&l=1", style:"background-image: url('organizations/umsc.png'); background-size: 85%; background-repeat:no-repeat", name: "UM Soccer Club", position:"Defenseman", role:"Played defense at the Unionville-Milliken Soccer Club."};
   var top_scholar = {link: "http://www.yrdsb.edu.on.ca/pdfs/w/news/NW1407081.pdf", style:"background-image: url(https://pbs.twimg.com/profile_images/494835763326885889/MOygWXwZ.png); background-size: 95%;", name: "York School Board", position:"Top Scholar", role:"Achieved 3rd highest graduating average out of 115,000 students."};
   var ccs = {link: "https://www.youtube.com/watch?v=HAlkA579Lp4", style:"background-image: url(http://www.cancer.ca/img/CCSSite/ccs_logo_fb.png); background-size: 100%;", name: "Canadian Cancer Society", position:"Youth Council President", role:"Coordinated $10,000 in donations across York Region."};
+  
   Organizations.insert(voltera);
   Organizations.insert(bitmaker);
   Organizations.insert(deca);
-  Organizations.insert(mytf);
   Organizations.insert(glowstik);
-  Organizations.insert(phasma);
-  Organizations.insert(soccer);
+  Organizations.insert(mytf);
   Organizations.insert(top_scholar);
   Organizations.insert(ccs);
+  Organizations.insert(phasma);
+
 });
 
