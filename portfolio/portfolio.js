@@ -124,6 +124,8 @@ Meteor.startup(function() {
                   title: "Adelaide, the Line Follower",
                   subtitle: "Hydrogen Fuel Cell-Powered Robot",
                   background_image: 'background-image: url("/projects/adelaide/background.jpg")',
+                  right_offset: "right: -2vw;",
+                  sub_right_offset: "right: -0.8vw",
                   invert: "line-follow",
                   tabs:[{type: "tech", name: "Tech Stack", active_tab: "active-tab"}, {type: "gallery", name: "Gallery"}],
                   content_boxes: [
@@ -147,6 +149,7 @@ Meteor.startup(function() {
                 title: "FrameMe, Living Photo Frame",
                 subtitle: "500px Pictures That Compliment Your Day",
                 right_offset: "right: -0.3vw",
+                background_image: 'background-image: url("/projects/frame_me/background.jpg")',
                 tabs: [{type: "tech", name: "Tech Stack", active_tab: "active-tab"}, {type: "gallery", name: "Gallery"}],
                 content_boxes: [
                                   {css_class: '', type: "tech", paragraphs: ['<p>FrameMe is a living photo frame that dynamically curates and displays 500px (social media) photos based on the current time of day and weather. FrameMe provides an endless stream of pictures, cycling every minute and renewing its collection every hour. Current features being built include motion detection for efficient power management and natural language processing for verbal commands. </p> <p>Check out the <a href="https://medium.com/@abali96/building-a-digital-photo-frame-with-500px-raspberry-pi-and-ruby-f3639fd294ce"><span class="link">build blog</span></a> for full implementation details and source code.</p>'],
@@ -169,7 +172,7 @@ Meteor.startup(function() {
     var breathaliver = {name: "breathaliver",
                 title: "BreathAliver, IOT breathalyzer",
                 subtitle: "Wearable, Uber-Connected Breathalyzer",
-                background_image: 'background-image: url("projects/frame_me/background.jpg")',
+                background_image: 'background-image: url("projects/breathaliver/breathaliver_cropped.jpg")',
                 right_offset: "right: -0.3vw",
                 tabs: [{type: "tech", name: "Tech Stack", active_tab: "active-tab"}, {type: "gallery", name: "Gallery"}],
                 content_boxes: [
@@ -193,6 +196,8 @@ Meteor.startup(function() {
     var matrix = {name: "matrix_assistant",
                 title: "Mate, the Desktop Assistant",
                 subtitle: "Internet-connected LED Matrix Display",
+                right_offset: "right: -2vw;",
+                sub_right_offset: "right: -0.8vw;",
                 background_image: 'background-image: url("/projects/mate/background.jpg");',
                 invert: "line-follow",
                 tabs: [{type: "tech", name: "Tech Stack", active_tab: "active-tab"}, {type: "gallery", name: "Gallery"}, {type: "video", name: "Video"}],
@@ -217,8 +222,9 @@ Meteor.startup(function() {
                     };
     var replay = {name: "replay",
                 title: "Replay, Social Event Archive",
-                background_image: 'background-image: url("https://images.unsplash.com/photo-1438109519352-a52c41243c1a?q=80&fm=jpg&s=5e94365bd19daae00de012e317152490")',
+                background_image: 'background-image: url("projects/replay/background.png")',
                 invert: "line-follow",
+                right_offset: "right: -2vw;",
                 tabs: [{type: "tech", name: "Summary", active_tab: "active-tab"}, {type: "stack", name: "Tech Stack"}],
                 content_boxes: [
                                   {css_class: '', type: "tech", paragraphs: ["<p>Replay leverages Twitter API data so that events can be 'replayed' with the original audience reactions. Currently, it supports three distinct code-crafted experiences: a curated digest, a live minute-by-minute timeline, and tweets by social influencers and friends. Replay excels at tracking sporting events, concert festivals, and television shows, where you can see exactly what happened at what moment and how the world felt with fine precision. Quality content is curated through a simple upvote/downvote system. It's better than PVR, and a hell of a lot cooler than missing out.</p><p>Replay was originally piloted at Bitmaker Labs, a code bootcamp in downtown Toronto. It was a project I completed shortly after completing their nine-week, immersive web development bootcamp.</p><p>Check out the code on <a href='http://github.com/abali96/Replay/''><span class='link'>Github</span></a>.</p>"]},
@@ -259,7 +265,7 @@ Meteor.startup(function() {
 
     var freeloader = {name: "freeloader",
                 title: "Freeloader, Free Food Finder",
-                background_image: 'background-image: url("https://images.unsplash.com/photo-1416677357736-79cd2bce22c5?q=80&fm=jpg&s=947a12b70e91e9781093dd7a068beaab")',
+                background_image: 'background-image: url("projects/freeloader/background.png")',
                 right_offset: "right: -0.3vw",
                 tabs: [{type: "tech", name: "Summary", active_tab: "active-tab"}, {type: "stack", name: "Tech Stack"}],
                 content_boxes: [
