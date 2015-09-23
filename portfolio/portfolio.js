@@ -62,6 +62,7 @@ if (Meteor.isClient) {
     },
     "mouseover .image-wrapper" : function(event) {
       var target = $(event.target);
+      target.addClass('active-image');
       target.siblings().removeClass('active-image');
       target.addClass('active-image');
       var display = target.parent().siblings('.display-image');
@@ -73,6 +74,7 @@ if (Meteor.isClient) {
 
   Template.webdev_gallery.events({
     "mouseover .image-wrapper" : function(event) {
+      console.log("here");
       var target = $(event.target);
       target.siblings().removeClass('active-image');
       target.addClass('active-image');
