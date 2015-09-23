@@ -95,9 +95,9 @@
 
 <template name="webdev_gallery">
 	{{#with webdev_gallery}}
-		<div class="webdev-gall">
-	      <div class='display-image {{invert}}' id="1" style={{gallery_display_image}}></div>
-	      <div class='caption {{invert}}'>Welcome to Replay.</div>
+		<div class='webdev-gall'>
+	      <div class='display-image {{invert}}' style={{gallery_display_image}} id="1"></div>
+	      <div class='caption {{invert}}'>{{default_text}}</div>
 	      <div class='small-images  {{invert}}'>
 	      	{{#each images}}
 	      		<div class={{image_classes}} {{../invert}} id={{image_number}} style={{background_image}} data-text={{caption}}></div>

@@ -215,7 +215,7 @@ Meteor.startup(function() {
                     };
     var replay = {name: "replay",
                 title: "Replay, Social Event Archive",
-                background_image: 'background-image: url("/projects/replay/pictures.png")',
+                background_image: 'background-image: url("https://images.unsplash.com/photo-1438109519352-a52c41243c1a?q=80&fm=jpg&s=5e94365bd19daae00de012e317152490")',
                 invert: "line-follow",
                 tabs: [{type: "tech", name: "Summary", active_tab: "active-tab"}, {type: "stack", name: "Tech Stack"}],
                 content_boxes: [
@@ -242,6 +242,7 @@ Meteor.startup(function() {
                                 ],
                   webdev_gallery: {
                       invert: "line-follow",
+                      default_text: "Welcome to Replay.",
                       images : [
                         {image_classes: "image-wrapper active-image", background_image:"background-image: url('/projects/replay/replay.png')", caption:"Welcome to Replay."},
                         {image_classes: "image-wrapper", background_image:"background-image: url('/projects/replay/homepage.jpeg')", caption:"After logging in, Replay dives straight into its event archives - recent events tracked by other users."},
@@ -256,7 +257,7 @@ Meteor.startup(function() {
 
     var freeloader = {name: "freeloader",
                 title: "Freeloader, Free Food Finder",
-                background_image: 'background-image: url("https://d2d00szk9na1qq.cloudfront.net/Product/b48e3bcc-de1b-4df1-bd21-249c961fc287/Images/Large_0266474.jpg"); background-size: 25%; background-repeat: repeat',
+                background_image: 'background-image: url("https://images.unsplash.com/photo-1416677357736-79cd2bce22c5?q=80&fm=jpg&s=947a12b70e91e9781093dd7a068beaab")',
                 tabs: [{type: "tech", name: "Summary", active_tab: "active-tab"}, {type: "stack", name: "Tech Stack"}],
                 content_boxes: [
                                   {css_class: '', type: "tech", paragraphs: ["<p>Waterloo (UW) Freeloader uses data from Facebook events at the University of Waterloo to help locate free food on campus, sending you an SMS notification with directions to your next meal. In addition to text notifications, there is a simple web interface that allows you access the same information. Food postings are also supplemented by student input. Notifications occur 15 minutes before the event starts, giving you enough time to walk all the way across campus.</p> <p>A feature that allows users to SMS information back to the server about the quantity of food remaining is currently being built. Application of this technology to other verticals is also underway.</p> <p>As expected, inspiration for UW Freeloader came from my poor student budget and a demonstrated demand from my classmates.</p> <p>Check out the code on <a href='http://github.com/abali96/uw_freeloader/'><span class='link'>Github</span></a>.</p>"]},
@@ -280,6 +281,7 @@ Meteor.startup(function() {
                                   },
                                 ],
                   webdev_gallery: {
+                      default_text: "The Waterloo Freeloader web interface. Each card displays the upcoming events on campus with free food, what kind of food will be served, and directions are just one click away.",
                       images : [
                         {image_classes: "image-wrapper active-image", background_image:"background-image: url('/projects/freeloader/homepage.png')", caption:"The Waterloo Freeloader web interface. Each card displays the upcoming events on campus with free food, what kind of food will be served, and directions are just one click away."},
                         {image_classes: "image-wrapper", background_image:"background-image: url('/projects/freeloader/android.png')", caption:"A sample SMS notification a user would receive. Again, directions are one tap away."},
