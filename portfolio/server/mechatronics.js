@@ -84,7 +84,7 @@ Meteor.mechatronics = {
                 tabs: [{type: "tech", name: "Tech Stack", active_tab: "active-tab"}, {type: "gallery", name: "Gallery"}, {type: 'video', name: "Video"}],
                 next_text: "Next  &#8595;",
                 content_boxes: [
-                                  {css_class: '', type: "tech", paragraphs: ['<p>BreathAliver is wearable breathalyzer that detects your blood alcohol concentration as you approach your car, and automatically calls an Uber cab to your location (or texts a friend!) if you’ve had too much to drink. It uses NFC to determine when the user approaches their car, acting as a pre-emptive solution to drunk driving.</p><p>To minimize cost, BreathAliver collects temperature and pressure data about the user\'s breath, correlating these metrics to relative levels of blood alcohol concentration.</p><p>This project placed 1st at <a href="https://wearhackstoronto.splashthat.com/"<span class="link">Wearhacks Toronto 2015</span></a>, and was featured at the <a href="http://www.wearewearables.com/july-2015-toronto/"><span class="link">Toronto July WeAreWearables conference</span></a> at these Discovery District.'],
+                                  {css_class: '', type: "tech", paragraphs: ['<p>BreathAliver is wearable breathalyzer that detects your blood alcohol concentration as you approach your car, and automatically calls an Uber cab to your location (or texts a friend!) if you’ve had too much to drink. It uses NFC to determine when the user approaches their car, acting as a pre-emptive solution to drunk driving.</p><p>To minimize cost, BreathAliver collects temperature and pressure data about the user\'s breath, correlating these metrics to relative levels of blood alcohol concentration.</p><p>This project placed 1st at <a href="https://wearhackstoronto.splashthat.com/"<span class="link">Wearhacks Toronto 2015</span></a>, and was featured at the <a href="http://www.wearewearables.com/july-2015-toronto/"><span class="link">Toronto July WeAreWearables conference</span></a> at the Discovery District.'],
                                     tech_lists: [
                                     {
                                       css_class: 'electrical',
@@ -102,7 +102,7 @@ Meteor.mechatronics = {
                                   {css_class: 'video-wrapper', type: "video", video: '<iframe width="100%" height="94%" src="https://www.youtube.com/embed/C0wPDZJ44tE??start=36" frameborder="0" allowfullscreen></iframe>'},
                                 ],
                     },
-    matrix : {name: "matrix_assistant",
+    matrix : {name: "mate",
                 title: "Mate, the Desktop Assistant",
                 subtitle: "Internet-connected LED Matrix Display",
                 right_offset: "right: -2vw;",
