@@ -1,0 +1,27 @@
+#ie {
+  background: none;
+  .ribbon {
+    position: relative;
+    top: 200px;
+    width: 61%;
+    padding: 25px;
+    padding-left: 45px;
+    font-family: "Fjalla One";
+    font-size: 100px;
+    line-height: 120px;
+    background-color: #ffc31c;
+    color: black;
+  }
+  .apology {
+    position: relative;
+    top: 270px;
+    z-index: 100;
+    color: white;
+    font-size: 33px;
+    line-height: 50px;
+    font-family: "Roboto";
+    font-weight: 100;
+    padding: 45px;
+    width: 70%;
+  }
+}

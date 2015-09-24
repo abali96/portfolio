@@ -1,0 +1,22 @@
+footer {
+  background-color: black;
+  width: 100%;
+  height: 6vw;
+  text-align: center;
+
+  .button {
+    height: 3.5vw;
+    border-radius: 1000px;
+    -webkit-border-radius: 1000px;
+    -moz-border-radius: 1000px;
+    cursor: pointer;
+    transition: all .2s ease-in-out;
+    margin-right: 0.5vw;
+    margin-left: 0.5vw;
+    margin-top: 1.3vw;
+  }
+
+  .button:hover {
+    transform: scale(1.05);
+  }
+}

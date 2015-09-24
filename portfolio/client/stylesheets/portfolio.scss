@@ -1,0 +1,363 @@
+body {
+  background: black;
+}
+
+.mobile {
+  display: none;
+}
+
+.mobile-gallery {
+  display:none;
+}
+
+.section {
+  height: 54vw;
+  width: 100vw;
+  position: relative;
+  top: 0;
+}
+
+.background {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+
+.line-follow {
+  -moz-transform: scaleX(-1);
+  -o-transform: scaleX(-1);
+  -webkit-transform: scaleX(-1);
+  transform: scaleX(-1);
+  filter: FlipH;
+  -ms-filter: "FlipH";
+  h1 {
+    text-align: right;
+    padding-right: 1vw;
+    padding-left: 0;
+  }
+  .tabs {
+    text-align: right;
+    padding-right: 0.41205vw;
+  }
+}
+
+.description.line-follow .content {
+  border: none;
+  border-right: 1px solid white;
+}
+
+div.description.line-follow .content {
+  margin-left: 8.5%;
+}
+
+.circular-face {
+  position: absolute;
+  height: 6vw;
+  right: 17%;
+  margin-top: 20px;
+  border-radius: 150px;
+  -webkit-border-radius: 150px;
+  -moz-border-radius: 150px;
+  border: 3px solid rgba(255, 255, 255, 0.9);
+}
+
+.logo {
+  position: absolute;
+  margin-top: 20.5px;
+  height: 3.5vw;
+  border-radius: 1000px;
+  -webkit-border-radius: 1000px;
+  -moz-border-radius: 1000px;
+  cursor: pointer;
+  transition: all .2s ease-in-out;
+}
+
+.logo:hover {
+  transform: scale(1.05);
+}
+
+.github {
+  right: 7%;
+}
+
+.linkedin {
+  right: 2%;
+}
+
+.twitter {
+  right: 12%;
+}
+
+.home {
+  color: white;
+  font-weight: 400;
+  width: 100vw;
+  text-align: center;
+  text-shadow: 1px 1px black;
+}
+
+.name {
+  top: 5vw;
+  font-size: 9vw;
+  font-family: 'Fjalla One', sans-serif;
+  position: absolute;
+}
+
+.sub {
+  top: 21vw;
+  font-size: 2.5vw;
+  font-family: 'Playball', sans-serif;
+  position: absolute;
+}
+
+.categories {
+  top: 25vw;
+  width: 100vw;
+  margin-left: auto;
+  margin-right: auto;
+  color: white;
+  font-weight: 400;
+  position: absolute;
+  display: block;
+  text-align: center;
+  text-shadow: 1px 1px black;
+  margin-top: 4vw;
+}
+
+.button-circ {
+  position: absolute;
+  width: 14vw;
+  height: 14vw;
+  margin-bottom: 2vw;
+  margin: 0 2vw;
+  position: relative;
+  display: inline-block;
+  background-color: rgba(0, 0, 0, 0.35);
+  padding: 1.4vw 1.4vw;
+  border-radius: 50%;
+  border: 3px solid rgba(255, 255, 255, 0.9);
+  opacity: 1;
+  transition: all .2s ease-in-out;
+
+  p {
+    width: 75%;
+    height: 75%;
+    margin: 6.2vw auto 0 auto;
+    font-family: "Fjalla One";
+    font-size: 1.55vw;
+  }
+  &.button-circ:hover {
+    transform: scale(1.05);
+    cursor: pointer;
+    transition: font-size(1.05);
+  }
+}
+
+#content-wrapper {
+  color: black;
+  margin-top: 2vw;
+  box-shadow: 0px 3px 2px #d3d3d3;
+  position: relative;
+  z-index: 10;
+}
+
+.project-content {
+  background-color: white;
+  position: absolute;
+  right: 0;
+  font-family: "Fjalla One";
+}
+
+.video-wrapper {
+  height: 24vw;
+}
+
+.video {
+  position: relative;
+  top: 0.45vw;
+}
+
+.small-images {
+  height: 14%;
+  width: 100%;
+  text-align: center;
+}
+.image-wrapper {
+  width: 15%;
+  height: 100%;
+  display: inline-block;
+  background-size: cover;
+  background-position: center;
+  border: 2px solid rgba(30, 30, 30, 1);
+}
+
+.active-image {
+  border: 2px solid white;
+}
+
+.subtitle {
+  width: 40%;
+  position: absolute;
+  top: 7vw;
+  right: 0;
+  font-size: 2vw;
+  line-height: 3.5vw;
+  padding-left: 1vw;
+  padding-top: 0.5vw;
+  padding-bottom: 0.5vw;
+  font-family: "Fjalla One";
+  color: white;
+  background-color: rgba(30, 30, 30, 0.6);
+}
+
+.project {
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  background-position: center;
+}
+
+.electrical,.software {
+  position: relative;
+  top: 0;
+  width: 46%;
+  display: inline-block;
+}
+
+div#contact .home-tint {
+  filter: gray; /* IE6-9 */
+  filter: grayscale(90%); /* firefox */
+  -webkit-filter: grayscale(90%); /* Chrome 19+, Safari 6+, Safari 6+ iOS */
+
+  &.home-tint:before {
+      content: "";
+      display: block;
+      position: relative;
+      top: 0;
+      height: 100%;
+      width: 100%;
+      background: rgba(20,20 ,40, 0.6);
+  }
+}
+
+.link {
+  color: #d3d3d3;
+}
+
+.white-link {
+  color: rgba(30, 30, 30, 0.6);
+  &:hover {
+    background-color: white;
+  }
+}
+
+#robotics-wrapper section div[class=description] .content, #webdev-wrapper section div[class=description] .content {
+  border-left: 1px solid white;
+}
+
+.gall {
+  height: 32.3vw;
+}
+
+.next {
+  cursor: pointer;
+  position: absolute;
+  font-size: 0.9vw;
+  right: 4vw;
+  &.flip {
+    position: absolute;
+    left: 8.5%;
+    width: 10vw;
+  }
+}
+
+.webdev-gall {
+  width: 47.1%;
+  height: 100vh;
+  .display-image {
+    left: 3vw;
+    height: 30vw;
+    position: relative;
+    width: 100%;
+    top: 0.69vw;
+    text-align: center;
+    margin-bottom: 1vw;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+  }
+
+  .small-images {
+    left: 3vw;
+    position: absolute;
+    height: 14%;
+    width: 47.1%;
+    text-align: center;
+    top: 38.5vw - 0.81vw;
+  }
+  .image-wrapper {
+    width: 20%;
+    height: 75%;
+    display: inline-block;
+    background-size: cover;
+    background-position: center;
+  }
+  .caption {
+    font-family: "Roboto", sans-serif;
+    font-weight: 100;
+    text-align: center;
+    padding: 1vw;
+    position: absolute;
+    top: 31vw;
+    left: 3vw;
+    background-color: rgba(30, 30, 30, 0.5);
+    width: 45%;
+    color: white;
+    font-size: 1vw;
+    overflow: scroll;
+    line-height: 1.5vw;
+    border-right: 1px solid white;
+  }
+}
+
+#contact {
+  color: white;
+  .title {
+    position: absolute;
+    text-align: center;
+    width: 100%;
+    top: 10vw;
+    font-size: 5vw;
+    font-family: 'Fjalla One', sans-serif;
+  }
+}
+
+.line-follow .caption {
+  border: none;
+  border-left: 1px solid white;
+}
+
+.subtitle .line-follow {
+  right: -0.75vw;
+}
+
+.enter-btn {
+  position: relative;
+  top: 10vw;
+  font-size: 1.4vw;
+  border: 0.2vw solid white;
+  padding: 0.4vw;
+  border-radius: 100%;
+  transition: all .2s ease-in-out;
+}
+
+.enter-btn:hover {
+  transform: scale(1.05);
+  background-color: rgba(255, 255, 255, 0.1);
+  cursor: pointer;
+}

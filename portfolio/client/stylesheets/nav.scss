@@ -1,0 +1,61 @@
+#nav {
+  z-index: 1000;
+  width: 100%;
+  position: fixed;
+  height: 2vw;
+  top: 0vw;
+  left: 0vw;
+  font-family: 'Fjalla One';
+  z-index: 100;
+  padding-top: 0.4vw;
+  padding-bottom: 0.4vw;
+  background-color: black;
+  & h1, a {
+    position: relative;
+    font-size: 1.55vw;
+    left: 3vw;
+    display: inline;
+    top: -1vw;
+    text-decoration: none;
+    color: #eee;
+  }
+
+ .robotics-hovered {
+    color: #ffc31c;
+  }
+
+ .webdev-hovered {
+    color: #328aab;
+  }
+ .orgs-hovered{
+    color: #00A14C;
+  }
+
+  & .nav-header {
+    left: 3.45vw;
+    cursor: pointer;
+  }
+
+  .nav-options {
+    position: relative;
+    display: inline-block;
+    width: 79.9%;
+    text-align: center;
+  }
+
+  .nav-options > span {
+    cursor: pointer;
+    padding: 0px 2vw;
+  }
+  .contact-button:hover {
+    cursor: pointer;
+  }
+}
+
+nav {
+  right: 0%;
+  position: absolute;
+  height: 80px;
+  width: 100%;
+  z-index: 100;
+}

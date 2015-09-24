@@ -1,0 +1,62 @@
+#orgs-wrapper {
+  section .title {
+    width: 40%;
+    color: white;
+    position: absolute;
+    top: 0.5vw;
+    right: 0vw;
+    font-size: 3vw;
+    line-height: 3.5vw;
+    padding-left: 1vw;
+    padding-top: 0.5vw;
+    padding-bottom: 0.5vw;
+    font-family: "Fjalla One";
+    background-color: #00A14C;
+  }
+
+  #organizations {
+    position: absolute;
+    height: 45vw;
+    top: 8vw;
+    margin: 0 auto;
+    left: 0;
+    right: 0;
+    width: 78vw;
+    background-color: rgba(255, 255, 255, 0.1);
+    overflow: scroll;
+    text-align: center;
+ }
+
+  .organization-block {
+    max-height: 20vw;
+    max-width: 20vw;
+    display: inline-block;
+    margin-top: 1.4vw;
+    margin: 1.1vw 2vw;
+  }
+
+  .org-image {
+    display: block;
+    height: 15vw;
+    width: 15vw;
+    background-position: 50% 50%; /* 50% 50% centers image in div */
+    position: relative;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+  }
+
+  .org-name, .position, .role {
+    color: white;
+    text-align: left;
+    width: 15vw;
+    font-family: "Roboto";
+    font-size: 1vw;
+    font-weight: 400;
+    margin-top: 0.1vw;
+    margin-bottom: 0;
+  }
+  .role {
+    font-weight: 100;
+  }
+}

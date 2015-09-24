@@ -1,0 +1,47 @@
+div#robotics-wrapper .home-tint, div#ie .home-tint {
+  filter: gray; /* IE6-9 */
+  filter: grayscale(25%); /* firefox */
+  -webkit-filter: grayscale(25%); /* Chrome 19+, Safari 6+, Safari 6+ iOS */
+
+  &.home-tint:before {
+      content: "";
+      display: block;
+      position: relative;
+      top: 0;
+      height: 100%;
+      width: 100%;
+      background: rgba(20,20 ,40, 0.8);
+  }
+}
+
+div#orgs-wrapper .home-tint {
+  filter: gray; /* IE6-9 */
+  filter: grayscale(100%); /* firefox */
+  -webkit-filter: grayscale(100%); /* Chrome 19+, Safari 6+, Safari 6+ iOS */
+
+  &.home-tint:before {
+      content: "";
+      display: block;
+      position: relative;
+      top: 0;
+      height: 100%;
+      width: 100%;
+      background: rgba(20,20 ,40, 0.8);
+  }
+}
+
+div#webdev-wrapper .home-tint {
+  filter: gray; /* IE6-9 */
+  filter: grayscale(25%); /* firefox */
+  -webkit-filter: grayscale(25%); /* Chrome 19+, Safari 6+, Safari 6+ iOS */
+
+  &.home-tint:before {
+      content: "";
+      display: block;
+      position: relative;
+      top: 0;
+      height: 100%;
+      width: 100%;
+      background: rgba(20,20 ,20, 0.9);
+  }
+}
