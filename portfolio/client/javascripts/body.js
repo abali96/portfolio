@@ -4,7 +4,7 @@ Template.body.helpers({
   },
 });
 
-Template.body.onRendered(function(){
+Template.body.onRendered(function() {
   $('#nav').hide();
   GAnalytics.pageview('/');
 });
