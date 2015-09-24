@@ -22,6 +22,7 @@
     color: white;
     padding-top: 1vw;
     padding-bottom: 1vw;
+    font-size: 1vw;
 
     span, ul {
       font-size: 1vw;
@@ -41,6 +42,14 @@
         margin-bottom: 1.25vw;
     }
 
+
+    ol {
+      margin-top: -1vw;
+    }
+    ol > *:last-child {
+        margin-bottom: 2vw;
+    }
+
     span {
       display: inline-block;
       text-decoration: underline;
@@ -49,6 +58,7 @@
 
     li {
       font-weight: 100;
+      font-size: 1vw;
       line-height: 1.3vw;
       margin-left: 1.2vw;
     }
