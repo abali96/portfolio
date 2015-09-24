@@ -89,12 +89,12 @@ Meteor.mechatronics = {
                                     {
                                       css_class: 'electrical',
                                       name: "Electrical Components",
-                                      list_elements:["Intel Edison", "Xadow Wearables Kit", "NFC tag", "Barometer"],
+                                      list_elements:["Intel Edison", "Xadow Wearables Kit", "NFC", "Barometer"],
                                     },
                                     {
                                       css_class: 'electrical',
                                       name: "Software",
-                                      list_elements: ["C++, Python, Ruby", "Uber API", "Twilio API", "Sensor calibration"],
+                                      list_elements: ["C++, Python, Ruby", "Uber and Twilio APIs", "Google Maps", "Sensor calibration"],
                                     },
                                     ],
                                   },
@@ -123,7 +123,7 @@ Meteor.mechatronics = {
                                     {
                                       css_class: 'electrical',
                                       name: "Software",
-                                      list_elements: ["Arduino C, Particle C", "Python backend (Bottle, Heroku)", "Yahoo Finance", "ForecastIO"],
+                                      list_elements: ["Arduino C, Particle C", "Python back end (Bottle, Heroku)", "Yahoo Finance", "ForecastIO"],
                                     },
                                     ],
                                   },
