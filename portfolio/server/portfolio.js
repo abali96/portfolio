@@ -12,5 +12,4 @@ Meteor.startup(function() {
   Organizations.insert(Meteor.organizations.top_scholar);
   Organizations.insert(Meteor.organizations.ccs);
   Organizations.insert(Meteor.organizations.phasma);
-
 });
