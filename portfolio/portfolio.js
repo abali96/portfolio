@@ -22,6 +22,14 @@ if (Meteor.isClient) {
     },
   });
 
+  Template.landing_section.events({
+    'click .enter-btn' : function() {
+      $('html, body').animate({
+          scrollTop: $('#robotics-wrapper').offset().top - $('#nav').height()
+      }, 400);
+    }
+  });
+
   Template.category.onRendered(function() {
     $('.content').hide();
     $('[data-type="tech"]').show();
@@ -197,7 +205,7 @@ Meteor.startup(function() {
                 subtitle: "Wearable, Uber-Connected Breathalyzer",
                 background_image: 'background-image: url("projects/breathaliver/breathaliver_cropped.jpg")',
                 right_offset: "right: -0.3vw",
-                tabs: [{type: "tech", name: "Tech Stack", active_tab: "active-tab"}, {type: "gallery", name: "Gallery"}],
+                tabs: [{type: "tech", name: "Tech Stack", active_tab: "active-tab"}, {type: "gallery", name: "Gallery"}, {type: 'video', name: "Video"}],
                 next_text: "Next  &#8595;",
                 content_boxes: [
                                   {css_class: '', type: "tech", paragraphs: ['<p>BreathAliver is wearable breathalyzer that detects your blood alcohol concentration as you approach your car, and automatically calls an Uber cab to your location (or texts a friend!) if you’ve had too much to drink. It uses NFC to determine when the user approaches their car, acting as a pre-emptive solution to drunk driving.</p><p>To minimize cost, BreathAliver collects temperature and pressure data about the user\'s breath, correlating these metrics to relative levels of blood alcohol concentration.</p><p>This project placed 1st at <a href="https://wearhackstoronto.splashthat.com/"<span class="link">Wearhacks Toronto 2015</span></a>, and was featured at the <a href="http://www.wearewearables.com/july-2015-toronto/"><span class="link">Toronto July WeAreWearables conference</span></a> at these Discovery District.'],
@@ -215,6 +223,7 @@ Meteor.startup(function() {
                                     ],
                                   },
                                   {css_class: 'gall', type: "gallery", images: ['background-image: url("/projects/breathaliver/breathaliver_vertical.jpg")', 'background-image: url("/projects/breathaliver/breathaliver_justin.jpg")', 'background-image: url("/projects/breathaliver/wearewearables_conference.jpg")']},
+                                  {css_class: 'video-wrapper', type: "video", video: '<iframe width="100%" height="94%" src="https://www.youtube.com/embed/C0wPDZJ44tE??start=36" frameborder="0" allowfullscreen></iframe>'},
                                 ],
                     };
     var matrix = {name: "matrix_assistant",

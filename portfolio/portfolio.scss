@@ -1241,3 +1241,19 @@ footer {
 .subtitle .line-follow {
   right: -0.75vw;
 }
+
+.enter-btn {
+  position: relative;
+  top: 10vw;
+  font-size: 1.4vw;
+  border: 0.2vw solid white;
+  padding: 0.4vw;
+  border-radius: 100%;
+  transition: all .2s ease-in-out;
+}
+
+.enter-btn:hover {
+  transform: scale(1.05);
+  background-color: rgba(255, 255, 255, 0.1);
+  cursor: pointer;
+}
