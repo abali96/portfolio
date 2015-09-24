@@ -3,8 +3,3 @@ Template.body.helpers({
     return Categories.find();
   },
 });
-
-Template.body.onRendered(function() {
-  $('#nav').hide();
-  GAnalytics.pageview('/');
-});

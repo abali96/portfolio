@@ -31,6 +31,27 @@ function changeColors() {
     }
 }
 
+
+var scroll_to_anchor = setInterval( function () {
+    if (window.location.hash === "") {
+        clearInterval(scroll_to_anchor);
+    }
+    if (window.location.hash !== "") {
+        if ($('[name=' + window.location.hash.slice(1) + ']').size()) {
+            var hash = window.location.hash.slice(1);
+            try {
+                $('html, body').animate({
+                    scrollTop: $('[name=' + window.location.hash.slice(1) + ']').offset().top
+                }, 0);
+                clearInterval(scroll_to_anchor);
+                changeColors();
+                console.log("made it");
+            } catch(err) {
+            }
+        }
+    }
+}, 50);
+
 $(document).on('ready page:load', function() {
   var browser = get_browser();
   if (browser.indexOf("IE") > -1) {
@@ -64,12 +85,9 @@ $(document).on('ready page:load', function() {
   // on scroll past 200 pixels, show the nav bar
   $(window).scroll(function() {
     changeColors();
-    if ($(window).scrollTop() <= 200)
-    {
+    if ($(window).scrollTop() <= 200) {
       $('#nav').fadeOut();
-    }
-    else
-    {
+    } else {
       $('#nav').fadeIn();
     }
   });
