@@ -1,7 +1,4 @@
 if (Meteor.isClient) {
-  // counter starts at 0
-  Session.setDefault('counter', 0);
-
   Template.body.helpers({
     categories : function() {
       return Categories.find();
@@ -10,6 +7,7 @@ if (Meteor.isClient) {
 
   Template.body.onRendered(function(){
     $('#nav').hide();
+    GAnalytics.pageview('/');
   });
 
   Template.category.helpers({
@@ -110,6 +108,7 @@ if (Meteor.isClient) {
       return Organizations.find({}, {sort: {date_created: -1}});;
     }
   });
+
 }
 
 Meteor.startup(function() {
