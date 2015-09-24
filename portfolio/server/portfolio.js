@@ -1,5 +1,4 @@
 Meteor.startup(function() {
-  console.log("running");
   Projects.remove({});
   Categories.remove({});
   Organizations.remove({});
