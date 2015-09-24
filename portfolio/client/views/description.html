@@ -1,0 +1,13 @@
+<template name="description">
+	<div class="description {{invert}}">
+		<div class="tabs">
+			{{#each tabs}}
+				<div class="tab {{active_tab}}" data-type={{type}}>{{name}}</div>
+			{{/each}}
+		</div>
+		{{#each content_boxes}}
+			{{> content_box}}
+		{{/each}}
+	<div class='next {{flip}}' id='towebdev'>{{{next_text}}}</div>
+	</div>
+</template>

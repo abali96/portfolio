@@ -1,0 +1,26 @@
+<template name="content_box">
+	<div class="content {{css_class}}" data-type={{type}}>
+		{{{paragraphs}}}
+
+		{{#each tech_lists}}
+			<ul class={{css_class}}><span>{{name}}</span>
+				{{#each list_elements}}
+					<li>{{this}}</li>
+				{{/each}}
+			</ul>
+		{{/each}}
+
+		{{#if images}}
+			<div class='display-image' style={{../background_image}}></div>
+			<div class='small-images'>
+				<div class='image-wrapper' style={{../background_image}}></div>
+				{{#each images}}
+					<div class='image-wrapper' style={{this}}></div>
+				{{/each}}
+			</div>
+		{{/if}}
+
+		{{{video_text}}}
+		{{{video}}}
+	</div>
+</template>
