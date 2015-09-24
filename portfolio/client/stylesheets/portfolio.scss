@@ -102,16 +102,18 @@ div.description.line-follow .content {
 
 .name {
   top: 5vw;
-  font-size: 9vw;
-  font-family: 'Fjalla One', sans-serif;
+  font-size: 8.9vw;
+  font-family: 'Fjalla One', 'Roboto';
   position: absolute;
 }
 
 .sub {
-  top: 21vw;
-  font-size: 2.5vw;
-  font-family: 'Playball', sans-serif;
+  top: 21.3vw;
+  font-size: 1.67vw;
+  font-family: 'Roboto', serif;
   position: absolute;
+  font-weight: 200;
+  letter-spacing: 1px;
 }
 
 .categories {
@@ -209,7 +211,7 @@ div.description.line-follow .content {
   padding-left: 1vw;
   padding-top: 0.5vw;
   padding-bottom: 0.5vw;
-  font-family: "Fjalla One";
+  font-family: "Fjalla One", "Roboto";
   color: white;
   background-color: rgba(30, 30, 30, 0.6);
 }
@@ -333,7 +335,7 @@ div#contact .home-tint {
     width: 100%;
     top: 10vw;
     font-size: 5vw;
-    font-family: 'Fjalla One', sans-serif;
+    font-family: 'Fjalla One', 'Roboto';
   }
 }
 
