@@ -15,7 +15,7 @@ function get_browser(){
   if ((tem = ua.match(/version\/(\d+)/i)) !== null) {
     M.splice(1,1,tem[1]);
   }
-  return M[0];
+  return M;
 }
 
 function changeColors() {
@@ -53,15 +53,16 @@ var scroll_to_anchor = setInterval( function () {
 }, 50);
 
 $(document).on('ready page:load', function() {
-  var browser = get_browser();
-  if (browser.indexOf("IE") > -1) {
+  // var browser = get_browser();
+  // if (browser[0].toLowerCase() == "ie" && browser[1] <= 8) {
     // window.location.assign('http://www.arjunbali.com/coming-soon');
-    $(".not-ie").hide();
-    console.log(browser);
-  }
-  else {
-    $("#ie").hide();
-  }
+    // $(".not-ie").hide();
+    // $("#ie").show();
+    // console.log(browser);
+  // }
+  // else {
+    // $("#ie").hide();
+  // }
 
   $('#nav').hide();
   $('.content').hide();

@@ -1,5 +1,6 @@
 body {
   background: black;
+  overflow-x: hidden;
 }
 
 .mobile {
@@ -314,6 +315,7 @@ div#contact .home-tint {
     background-position: center;
   }
   .caption {
+    overflow: hidden;
     font-family: "Roboto", sans-serif;
     font-weight: 100;
     text-align: center;
@@ -344,6 +346,7 @@ div#contact .home-tint {
 }
 
 .line-follow .caption {
+  overflow: hidden;
   border: none;
   border-left: 1px solid white;
 }
