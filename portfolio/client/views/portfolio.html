@@ -6,26 +6,31 @@
 </head>
 
 <body>
-	<nav>
-	  <img src="landing/purknits2.jpg" class="circular-face">
-	  <a href="http://medium.com/@abali96"><img src="landing/medium.png" class="logo medium"></a>
-	  <a href="http://ca.linkedin.com/in/abali96"><img src="landing/linkedin copy.png" class="logo linkedin"></a>
-	  <a href="http://github.com/abali96"><img src="landing/github.png" class="logo github"></a>
-	  <a href="http://twitter.com/abali96"><img src="landing/twitter.png" class="logo twitter"></a>
-	</nav>
-
-	<div id="intro-wrapper" class='section'>
-		{{> landing_section}}
+	<div id='ie' style='display: none;'>
+		<div class='ribbon'>Comming soon...</div>
+		<div class='apology'>I'm currently working on making this website IE compatible. Check it out on Chrome, Firefox, or Safari for the full experience!</div>
 	</div>
+	<div class='not-ie'>
+		<nav>
+		  <img src="landing/purknits2.jpg" class="circular-face">
+		  <a href="http://medium.com/@abali96"><img src="landing/medium.png" class="logo medium"></a>
+		  <a href="http://ca.linkedin.com/in/abali96"><img src="landing/linkedin copy.png" class="logo linkedin"></a>
+		  <a href="http://github.com/abali96"><img src="landing/github.png" class="logo github"></a>
+		  <a href="http://twitter.com/abali96"><img src="landing/twitter.png" class="logo twitter"></a>
+		</nav>
 
-	<div id="content-wrapper">
-		{{> nav}}
-		{{#each categories}}
-			{{> category}}
-		{{/each}}
-		{{> organizations}}
+		<div id="intro-wrapper" class='section'>
+			{{> landing_section}}
+		</div>
+
+		<div id="content-wrapper">
+			{{> nav}}
+			{{#each categories}}
+				{{> category}}
+			{{/each}}
+			{{> organizations}}
+		</div>
 	</div>
-	
 </body>
 
 <template name="footer">
