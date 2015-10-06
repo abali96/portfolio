@@ -53,16 +53,16 @@ var scroll_to_anchor = setInterval( function () {
 }, 50);
 
 $(document).on('ready page:load', function() {
-  // var browser = get_browser();
-  // if (browser[0].toLowerCase() == "ie" && browser[1] <= 8) {
-    // window.location.assign('http://www.arjunbali.com/coming-soon');
-    // $(".not-ie").hide();
-    // $("#ie").show();
-    // console.log(browser);
-  // }
-  // else {
-    // $("#ie").hide();
-  // }
+  var browser = get_browser();
+  if (browser[0].toLowerCase() == "ie" && browser[1] <= 8) {
+    window.location.assign('http://www.arjunbali.com/coming-soon');
+    $(".not-ie").hide();
+    $("#ie").show();
+    console.log(browser);
+  }
+  else {
+    $("#ie").hide();
+  }
 
   $('#nav').hide();
   $('.content').hide();

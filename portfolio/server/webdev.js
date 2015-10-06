@@ -8,7 +8,7 @@ Meteor.webdev = {
               next_text: "Next  &#8595;",
               tabs: [{type: "tech", name: "Summary", active_tab: "active-tab"}, {type: "stack", name: "Tech Stack"}],
               content_boxes: [
-                                {css_class: '', type: "tech", paragraphs: ["<p>Replay leverages Twitter API data so that events can be 'replayed' with their real time audience reactions. There are three form factors for this data: <ol> <li> a curated event digest featuring data from social influencers at the event (as verified by Replay), the user's friends, and popular tweets, </li><li> a minute-by-minute timeline, and <li>an \"event in pictures\" gallery.</li></ol></p> <p>Replay excels at tracking market events, sporting events, concert festivals, and television shows. Quality content is curated through community upvotes and downvotes. It's better than PVR, and a hell of a lot cooler than missing out.</p><p>Replay was originally piloted at Bitmaker Labs, a development bootcamp in downtown Toronto.</p><p>Check out the code on <a href='http://github.com/abali96/Replay/''><span class='link'>Github</span></a>.</p>"]},
+                                {css_class: '', type: "tech", paragraphs: ["<p>Replay leverages Twitter API data so that events can be 'replayed' with their real time audience reactions. There are three form factors for this data: <ol> <li> a curated event digest featuring data from social influencers at the event (as verified by Replay), the user's friends, and popular tweets, </li><li> a minute-by-minute timeline, and <li>an \"event in pictures\" gallery.</li></ol></p> <p>Replay excels at tracking market events, sporting events, concert festivals, and television shows. Quality content is curated through community upvotes and downvotes. It's better than PVR, and a hell of a lot cooler than missing out.</p><p>Replay was originally piloted at Bitmaker Labs, a development bootcamp in downtown Toronto.</p>"]},
                                 {css_class: '', type: "stack",
                                   tech_lists: [
                                     {
@@ -50,7 +50,7 @@ Meteor.webdev = {
               tabs: [{type: "tech", name: "Summary", active_tab: "active-tab"}, {type: "stack", name: "Tech Stack"}],
               next_text: "Next  &#8595;",
               content_boxes: [
-                                {css_class: '', type: "tech", paragraphs: ["<p>Freeloader uses data from Facebook events at the University of Waterloo to help locate free food on campus, sending you an SMS notification with directions to your next meal. Additional postings can be made by students.</p> <p>As expected, inspiration for Freeloader came from my tight student budget and a demonstrated demand from my classmates.</p> <p>Check out the code on <a href='http://github.com/abali96/uw_freeloader/'><span class='link'>Github</span></a>.</p>"]},
+                                {css_class: '', type: "tech", paragraphs: ["<p>Freeloader uses data from Facebook events at the University of Waterloo to help locate free food on campus, sending you an SMS notification with directions to your next meal. Additional postings can be made by students.</p> <p>As expected, inspiration for Freeloader came from my tight student budget and a demonstrated demand from my classmates.</p>"]},
                                 {css_class: '', type: "stack",
                                   tech_lists: [
                                     {
